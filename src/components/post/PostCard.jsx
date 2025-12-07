@@ -15,7 +15,7 @@ function PostCard({ title, subtitle, text, image, link }) {
                         rel="noopener noreferrer"
                         className="post-link"
                     >
-                        Read more / Watch
+                        Ver mais
                     </a>
                 )}
             </div>
