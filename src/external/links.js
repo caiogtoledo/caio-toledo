@@ -1,5 +1,10 @@
 const links = [
     {
+        link: "/posts",
+        logo: null, // Or provide a path to a blog icon if available, for now null or reuse an existing one if appropriate, but null is safer if no asset exists.
+        linkName: "My Blog",
+    },
+    {
         link: "https://www.youtube.com/@caiotoledodev",
         logo: "/youtube.png",
         linkName: "YouTube",

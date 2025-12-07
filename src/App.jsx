@@ -1,18 +1,17 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import Header from './components/header/header'
-import Profile from './components/profile/profile'
-import Cards from './components/cards/cards'
-import links from './external/links'
-import Footer from './components/footer/footer'
-
+import Home from './pages/Home'
+import Posts from './pages/Posts'
 
 function App() {
   return (
-    <div className="link-tree">
-      <Header />
-      <Profile />
-      <Cards links={links} />
-      <Footer />
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/posts" element={<Posts />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
