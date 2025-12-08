@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import './linkCard.css'
 
 function LinkCard({ logo, linkName, link }) {
@@ -13,9 +12,9 @@ function LinkCard({ logo, linkName, link }) {
 
     if (isInternal) {
         return (
-            <Link to={link}>
+            <a href={link}>
                 {content}
-            </Link>
+            </a>
         )
     }
 
