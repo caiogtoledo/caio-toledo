@@ -1,5 +1,10 @@
 const links = [
     {
+        link: "/posts",
+        logo: "/posts.png",
+        linkName: "Meus Posts",
+    },
+    {
         link: "https://www.youtube.com/@caiotoledodev",
         logo: "/youtube.png",
         linkName: "YouTube",
