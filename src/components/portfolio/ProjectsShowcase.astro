@@ -7,9 +7,9 @@ import projects from '../../data/projects.js';
   <div class="projects-grid">
     {projects.map((project, index) => (
       <article class="project-card scroll-reveal" style={`animation-delay: ${index * 0.1}s`}>
-        <div class="project-image">
-          <img src={project.image} alt={project.name} loading="lazy" />
-        </div>
+<div class="project-image">
+<img src={project.image} alt={`Projeto ${project.name} - ${project.description}`} loading="lazy" width="400" height="200" />
+</div>
         <div class="project-content">
           <h3 class="project-name">{project.name}</h3>
           <p class="project-description">{project.description}</p>

@@ -2,24 +2,44 @@
 import Header from '../../components/header/header.jsx';
 import Footer from '../../components/Footer.jsx';
 import projects from '../../data/projects.js';
+import about from '../../data/about.js';
 
 const pageTitle = 'Projetos - Caio Toledo';
 const pageDescription = 'Confira meus projetos de desenvolvimento de software';
+const canonicalURL = Astro.url.href;
+
+const softwareAppSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Projetos de Caio Toledo",
+  "applicationCategory": "WebApplication",
+  "author": {
+    "@type": "Person",
+    "name": about.name
+  }
+};
 ---
 
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{pageTitle}</title>
-    <meta name="description" content={pageDescription} />
-    <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={pageDescription} />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:title" content={pageTitle} />
-    <meta name="twitter:description" content={pageDescription} />
-  </head>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{pageTitle}</title>
+<meta name="description" content={pageDescription} />
+<meta name="author" content={about.name} />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href={canonicalURL} />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={pageDescription} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:locale" content="pt_BR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={pageDescription} />
+<script type="application/ld+json">{JSON.stringify(softwareAppSchema)}</script>
+</head>
   <body>
     <Header />
     <section class="projects-page">
@@ -28,12 +48,12 @@ const pageDescription = 'Confira meus projetos de desenvolvimento de software';
         <p>Confira alguns dos meus trabalhos recentes</p>
       </div>
 
-      <div class="projects-grid">
-        {projects.map((project) => (
-          <article class="project-card scroll-reveal">
-            <div class="project-image">
-              <img src={project.image} alt={project.name} loading="lazy" />
-            </div>
+<div class="projects-grid">
+{projects.map((project) => (
+<article class="project-card scroll-reveal">
+<div class="project-image">
+<img src={project.image} alt={`Projeto ${project.name} - ${project.description}`} loading="lazy" width="400" height="200" />
+</div>
             <div class="project-content">
               <h2 class="project-name">{project.name}</h2>
               <p class="project-description">{project.description}</p>

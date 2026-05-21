@@ -3,9 +3,13 @@ import Layout from '../../layouts/Layout.astro';
 import PostCard from '../../components/post/PostCard';
 import posts from '../../data/posts';
 import '../../pages/_Posts.css';
+
+const pageTitle = 'Posts - Caio Toledo';
+const pageDescription = 'Artigos e posts sobre desenvolvimento de software';
+const canonicalURL = Astro.url.href;
 ---
 
-<Layout title="Posts - Caio Toledo">
+<Layout title={pageTitle} description={pageDescription} canonicalURL={canonicalURL}>
     <div class="posts-container">
         <div style="margin-bottom: 20px; text-align: left;">
             <a href="/" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 8px;">

@@ -10,32 +10,54 @@ import about from '../data/about.js';
 
 const pageTitle = `${about.name} - ${about.title}`;
 const pageDescription = about.bio;
+const canonicalURL = Astro.url.href;
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": about.name,
+  "jobTitle": about.title,
+  "description": about.bio,
+  "email": about.email,
+  "url": canonicalURL,
+  "sameAs": [
+    "https://github.com/caiogtoledo",
+    "https://linkedin.com/in/caio-toledo",
+    "https://instagram.com/caiotoledo.dev",
+    "https://x.com/caiogtoledo"
+  ]
+};
 ---
 
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{pageTitle}</title>
-    <meta name="description" content={pageDescription} />
-    <meta name="author" content={about.name} />
-    <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={pageDescription} />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:title" content={pageTitle} />
-    <meta name="twitter:description" content={pageDescription} />
-    <link rel="canonical" href={Astro.url} />
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-      
-      body {
-        overflow-x: hidden;
-      }
-    </style>
-  </head>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{pageTitle}</title>
+<meta name="description" content={pageDescription} />
+<meta name="author" content={about.name} />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href={canonicalURL} />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={pageDescription} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:locale" content="pt_BR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={pageDescription} />
+<script type="application/ld+json">{JSON.stringify(personSchema)}</script>
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+</style>
+</head>
   <body>
     <Header />
     <main>

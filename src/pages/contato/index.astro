@@ -5,21 +5,38 @@ import about from '../../data/about.js';
 
 const pageTitle = 'Contato - Caio Toledo';
 const pageDescription = 'Entre em contato para oportunidades e colaborações';
+const canonicalURL = Astro.url.href;
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPoint",
+  "contactType": "customer service",
+  "email": about.email,
+  "areaServed": "BR",
+  "availableLanguage": ["Portuguese", "English"]
+};
 ---
 
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{pageTitle}</title>
-    <meta name="description" content={pageDescription} />
-    <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={pageDescription} />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:title" content={pageTitle} />
-    <meta name="twitter:description" content={pageDescription} />
-  </head>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{pageTitle}</title>
+<meta name="description" content={pageDescription} />
+<meta name="author" content={about.name} />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href={canonicalURL} />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={pageDescription} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:locale" content="pt_BR" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={pageDescription} />
+<script type="application/ld+json">{JSON.stringify(contactSchema)}</script>
+</head>
   <body>
     <Header />
     <section class="contact-page">

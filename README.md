@@ -1,11 +1,13 @@
-# Meus Links
+# Portfolio - Caio Toledo
 
-Este é um projeto de uma página de links pessoais, semelhante a um "link na bio", onde você pode agrupar e exibir seus links importantes em um só lugar.
+Este é um projeto de portfólio pessoal completo, desenvolvido com Astro e React, incluindo página de links pessoais, projetos, sobre, posts e contato.
 
 ## 🚀 Tecnologias Utilizadas
 
+- [Astro](https://astro.build/)
 - [React](https://react.dev/)
 - [Vite](https://vitejs.dev/)
+- [Netlify](https://www.netlify.com/)
 
 ## ▶️ Como Rodar o Projeto
 
@@ -43,5 +45,27 @@ O projeto está organizado da seguinte forma:
     -   **main.jsx**: O ponto de entrada da aplicação React.
     -   **App.jsx**: O componente principal que organiza a estrutura da página.
 -   **index.html**: O template HTML principal da aplicação.
--   **vite.config.js**: Arquivo de configuração do Vite.
--   **package.json**: Define os scripts e as dependências do projeto.
+- **vite.config.js**: Arquivo de configuração do Vite.
+- **package.json**: Define os scripts e as dependências do projeto.
+
+## ⚡ Otimização e Performance
+
+O projeto inclui diversas otimizações:
+
+- **Imagens**: Lazy loading implementado em todas as imagens
+- **SEO**: Meta tags, Open Graph, e schema.org markup
+- **Acessibilidade**: Alt text em imagens, aria-labels em links, navegação por teclado
+- **Sitemap**: Gerado automaticamente
+- **Performance**: Build otimizado com Astro
+
+## 🔧 Scripts
+
+```bash
+npm run dev      # Inicia servidor de desenvolvimento
+npm run build    # Build para produção
+npm run preview  # Preview do build
+```
+
+## 🌐 Implantação
+
+O projeto está configurado para implantação na Netlify com SSR.

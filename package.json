@@ -20,6 +20,7 @@
     "react-router-dom": "^7.10.1"
   },
   "devDependencies": {
+    "@astrojs/sitemap": "^3.7.2",
     "@eslint/js": "^9.36.0",
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
