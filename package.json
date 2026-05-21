@@ -11,9 +11,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@astrojs/netlify": "^6.6.3",
+    "@astrojs/netlify": "^7.0.10",
     "@astrojs/react": "^4.4.2",
-    "astro": "^5.16.4",
+    "astro": "^6.3.6",
     "marked": "^17.0.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",

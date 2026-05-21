@@ -1,0 +1,122 @@
+---
+import about from '../../data/about.js';
+---
+
+<section class="contact-section" id="contato">
+  <h2 class="section-title">Contato</h2>
+  <div class="contact-content">
+    <div class="contact-info">
+      <p class="contact-text">
+        Estou sempre aberto a novas oportunidades e colaborações. 
+        Entre em contato se tiver algum projeto interessante!
+      </p>
+      <div class="contact-details">
+        <a href={`mailto:${about.email}`} class="contact-item">
+          <span class="contact-icon">📧</span>
+          <span>{about.email}</span>
+        </a>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <span>{about.location}</span>
+        </div>
+      </div>
+    </div>
+    <div class="social-links">
+      <a href="https://github.com/caiogtoledo" class="social-link" target="_blank" rel="noopener noreferrer">
+        <span>GitHub</span>
+      </a>
+      <a href="https://linkedin.com/in/caio-toledo" class="social-link" target="_blank" rel="noopener noreferrer">
+        <span>LinkedIn</span>
+      </a>
+      <a href="https://instagram.com/caiotoledo.dev" class="social-link" target="_blank" rel="noopener noreferrer">
+        <span>Instagram</span>
+      </a>
+      <a href="https://x.com/caiogtoledo" class="social-link" target="_blank" rel="noopener noreferrer">
+        <span>X (Twitter)</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .contact-section {
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .contact-text {
+    font-size: 1.2rem;
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+  }
+
+  .contact-item:hover {
+    color: #fff;
+  }
+
+  .contact-icon {
+    font-size: 1.5rem;
+  }
+
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .social-link {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+
+  .social-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .contact-section {
+      padding: 3rem 1rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .contact-text {
+      font-size: 1rem;
+    }
+  }
+</style>
