@@ -1,26 +1,22 @@
 ---
-import Header from '../../components/header/header.jsx';
+import GlobalNav from '../../components/ui/GlobalNav.astro';
 import Footer from '../../components/Footer.jsx';
 import about from '../../data/about.js';
 import experience from '../../data/experience.js';
+import translations from '../../data/translations.js';
+
+// Language detection (default EN)
+const url = new URL(Astro.request.url);
+const lang = url.searchParams.get('lang') ?? 'en';
+const t = translations[lang] || translations.en;
 
 const pageTitle = `Sobre - ${about.name}`;
-const pageDescription = `Conheça mais sobre ${about.name}, ${about.title}`;
+const pageDescription = `Conheça mais sobre ${about.name}, ${t.about.title}`;
 const canonicalURL = Astro.url.href;
-
-const personSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": about.name,
-  "jobTitle": about.title,
-  "description": about.bio,
-  "email": about.email,
-  "url": canonicalURL
-};
 ---
 
 <!doctype html>
-<html lang="pt-BR">
+<html lang={lang}>
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,7 +36,7 @@ const personSchema = {
 <script type="application/ld+json">{JSON.stringify(personSchema)}</script>
 </head>
   <body>
-    <Header />
+    <GlobalNav />
     <section class="about-section">
       <div class="about-content">
         <div class="about-header">
@@ -48,13 +44,13 @@ const personSchema = {
             <img src={about.avatar} alt={about.name} />
           </div>
           <h1 class="about-name">{about.name}</h1>
-          <p class="about-title">{about.title}</p>
+          <p class="about-title">{t.about.title}</p>
           <p class="about-location">{about.location}</p>
         </div>
 
         <div class="about-bio">
           <h2>Sobre Mim</h2>
-          <p>{about.bio}</p>
+          <p>{t.about.bio}</p>
         </div>
 
         <div class="about-contact">

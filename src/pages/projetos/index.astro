@@ -1,27 +1,22 @@
 ---
-import Header from '../../components/header/header.jsx';
+import GlobalNav from '../../components/ui/GlobalNav.astro';
 import Footer from '../../components/Footer.jsx';
 import projects from '../../data/projects.js';
 import about from '../../data/about.js';
+import translations from '../../data/translations.js';
 
-const pageTitle = 'Projetos - Caio Toledo';
-const pageDescription = 'Confira meus projetos de desenvolvimento de software';
+// Language detection (default EN)
+const url = new URL(Astro.request.url);
+const lang = url.searchParams.get('lang') ?? 'en';
+const t = translations[lang] || translations.en;
+
+const pageTitle = 'Projects - Caio Toledo';
+const pageDescription = t.projectsDescription || 'Check out my software development projects';
 const canonicalURL = Astro.url.href;
-
-const softwareAppSchema = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Projetos de Caio Toledo",
-  "applicationCategory": "WebApplication",
-  "author": {
-    "@type": "Person",
-    "name": about.name
-  }
-};
 ---
 
 <!doctype html>
-<html lang="pt-BR">
+<html lang={lang}>
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,7 +36,7 @@ const softwareAppSchema = {
 <script type="application/ld+json">{JSON.stringify(softwareAppSchema)}</script>
 </head>
   <body>
-    <Header />
+    <GlobalNav />
     <section class="projects-page">
       <div class="projects-header">
         <h1>Projetos</h1>

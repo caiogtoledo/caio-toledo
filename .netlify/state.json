@@ -16,5 +16,6 @@
 			"postalCode": "01000"
 		},
 		"timestamp": 1779318930084
-	}
+	},
+	"dbConnectionString": "postgres://localhost:60040/postgres"
 }

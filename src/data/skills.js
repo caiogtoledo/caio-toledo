@@ -1,15 +1,27 @@
 const skills = [
   {
-    category: "Frontend",
-    items: ["React", "TypeScript", "Astro", "HTML5", "CSS3", "TailwindCSS", "JavaScript"]
+    category: "Programming Languages",
+    items: ["Java", "JavaScript", "Python", "Dart"]
   },
   {
-    category: "Backend",
-    items: ["Node.js", "Express", "Python", "Java", "PostgreSQL", "MongoDB"]
+    category: "Frameworks",
+    items: ["Next JS", "React JS", "React Native", "Flutter", "Django", "FastAPI", "Flask"]
   },
   {
-    category: "Tools & Others",
-    items: ["Git", "Docker", "AWS", "Figma", "VS Code", "Linux"]
+    category: "AI & LLMs",
+    items: ["MCP Servers", "LangChain", "LangGraph"]
+  },
+  {
+    category: "Cloud & DevOps",
+    items: ["AWS", "Google Cloud", "Digital Ocean", "Docker", "Kubernetes", "Serverless Architectures"]
+  },
+  {
+    category: "Databases",
+    items: ["SQL", "NoSQL (MongoDB, DynamoDB)", "Vector DBs"]
+  },
+  {
+    category: "Methodologies & Tools",
+    items: ["Git", "GitHub", "Clean Architecture", "Scrum"]
   }
 ]
 

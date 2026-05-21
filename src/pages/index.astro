@@ -1,5 +1,5 @@
 ---
-import Header from '../components/header/header.jsx';
+import GlobalNav from '../components/ui/GlobalNav.astro';
 import Footer from '../components/Footer.jsx';
 import Hero from '../components/portfolio/Hero.astro';
 import Skills from '../components/portfolio/Skills.astro';
@@ -7,30 +7,20 @@ import ProjectsShowcase from '../components/portfolio/ProjectsShowcase.astro';
 import Experience from '../components/portfolio/Experience.astro';
 import Contact from '../components/portfolio/Contact.astro';
 import about from '../data/about.js';
+import translations from '../data/translations.js';
 
-const pageTitle = `${about.name} - ${about.title}`;
-const pageDescription = about.bio;
+// Determine language (default EN)
+const url = new URL(Astro.request.url);
+const lang = url.searchParams.get('lang') ?? 'en';
+const t = translations[lang] || translations.en;
+
+const pageTitle = `${about.name} - ${t.about.title}`;
+const pageDescription = t.about.bio;
 const canonicalURL = Astro.url.href;
-
-const personSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": about.name,
-  "jobTitle": about.title,
-  "description": about.bio,
-  "email": about.email,
-  "url": canonicalURL,
-  "sameAs": [
-    "https://github.com/caiogtoledo",
-    "https://linkedin.com/in/caio-toledo",
-    "https://instagram.com/caiotoledo.dev",
-    "https://x.com/caiogtoledo"
-  ]
-};
 ---
 
 <!doctype html>
-<html lang="pt-BR">
+<html lang={lang}>
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -59,7 +49,7 @@ body {
 </style>
 </head>
   <body>
-    <Header />
+    <GlobalNav />
     <main>
       <Hero />
       <Skills />

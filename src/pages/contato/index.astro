@@ -1,20 +1,17 @@
 ---
-import Header from '../../components/header/header.jsx';
+import GlobalNav from '../../components/ui/GlobalNav.astro';
 import Footer from '../../components/Footer.jsx';
 import about from '../../data/about.js';
+import translations from '../../data/translations.js';
 
-const pageTitle = 'Contato - Caio Toledo';
-const pageDescription = 'Entre em contato para oportunidades e colaborações';
+// Language detection (default EN)
+const url = new URL(Astro.request.url);
+const lang = url.searchParams.get('lang') ?? 'en';
+const t = translations[lang] || translations.en;
+
+const pageTitle = 'Contact - Caio Toledo';
+const pageDescription = t.contactDescription || 'Get in touch for opportunities and collaborations';
 const canonicalURL = Astro.url.href;
-
-const contactSchema = {
-  "@context": "https://schema.org",
-  "@type": "ContactPoint",
-  "contactType": "customer service",
-  "email": about.email,
-  "areaServed": "BR",
-  "availableLanguage": ["Portuguese", "English"]
-};
 ---
 
 <!doctype html>
@@ -38,7 +35,7 @@ const contactSchema = {
 <script type="application/ld+json">{JSON.stringify(contactSchema)}</script>
 </head>
   <body>
-    <Header />
+    <GlobalNav />
     <section class="contact-page">
       <div class="contact-header">
         <h1>Contato</h1>

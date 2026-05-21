@@ -1,71 +1,121 @@
 # Portfolio - Caio Toledo
 
-Este é um projeto de portfólio pessoal completo, desenvolvido com Astro e React, incluindo página de links pessoais, projetos, sobre, posts e contato.
+Bem-vindo ao meu portfólio pessoal! Este projeto foi desenvolvido para apresentar minha trajetória profissional, habilidades técnicas e projetos de forma moderna e interativa.
+
+## 🎯 Sobre o Projeto
+
+Este é um portfólio pessoal completo, desenvolvido com **Astro** e **React**, featuring:
+
+- **Página Home** - Apresentação com Hero section, habilidades, projetos em destaque e experiência profissional
+- **Sobre** - Informações detalhadas sobre minha trajetória e experiência
+- **Projetos** - Showcase de projetos pessoais e profissionais
+- **Links** - Página dedicada com links para redes sociais e recursos externos
+- **Contato** - Formulário e informações para entrar em contato
+- **Blog/Posts** - Artigos sobre desenvolvimento e tecnologia
 
 ## 🚀 Tecnologias Utilizadas
 
-- [Astro](https://astro.build/)
-- [React](https://react.dev/)
-- [Vite](https://vitejs.dev/)
-- [Netlify](https://www.netlify.com/)
+- **[Astro** - Framework web moderno para sites estáticos e SSR
+- **[React](https://react.dev/)** - Biblioteca para interfaces interativas
+- **[Vite](https://vitejs.dev/)** - Build tool ultrarrápida
+- **[Netlify](https://www.netlify.com/)** - Plataforma de deploy e hospedagem
 
 ## ▶️ Como Rodar o Projeto
 
-Siga os passos abaixo para executar o projeto em seu ambiente de desenvolvimento.
+Siga os passos abaixo para executar o projeto em seu ambiente de desenvolvimento:
 
-1.  **Clone o repositório (se aplicável):**
-    ```bash
-    git clone <url-do-repositorio>
-    cd my-links
-    ```
+### 1. Clone o repositório
 
-2.  **Instale as dependências:**
-    Certifique-se de ter o [Node.js](https://nodejs.org/) instalado. Em seguida, instale as dependências do projeto.
-    ```bash
-    npm install
-    ```
+```bash
+git clone https://github.com/caiogtoledo/portfolio.git
+cd portfolio
+```
 
-3.  **Execute a aplicação:**
-    O comando abaixo iniciará o servidor de desenvolvimento.
-    ```bash
-    npm run dev
-    ```
+### 2. Instale as dependências
 
-    A aplicação estará disponível em `http://localhost:5173` (ou outra porta, se a 5173 estiver em uso).
+Certifique-se de ter o [Node.js](https://nodejs.org/) (versão 18+) instalado. Em seguida:
+
+```bash
+npm install
+```
+
+### 3. Execute a aplicação
+
+O comando abaixo iniciará o servidor de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+A aplicação estará disponível em `http://localhost:4321` (padrão do Astro).
 
 ## 📂 Estrutura de Pastas
 
 O projeto está organizado da seguinte forma:
 
--   **/public**: Contém arquivos estáticos como imagens e ícones que são servidos diretamente pelo servidor.
--   **/src**: Contém todo o código-fonte da aplicação.
-    -   **assets**: Recursos como imagens e fontes que são processados pelo Vite.
-    -   **components**: Componentes React reutilizáveis que formam a interface do usuário (cabeçalho, rodapé, cartões de link, etc.).
-    -   **external**: Arquivos que contêm dados externos, como a lista de links.
-    -   **main.jsx**: O ponto de entrada da aplicação React.
-    -   **App.jsx**: O componente principal que organiza a estrutura da página.
--   **index.html**: O template HTML principal da aplicação.
-- **vite.config.js**: Arquivo de configuração do Vite.
-- **package.json**: Define os scripts e as dependências do projeto.
+```
+portfolio/
+├── public/              # Arquivos estáticos (imagens, ícones, fonts)
+├── src/
+│   ├── components/      # Componentes Astro e React
+│   │   ├── portfolio/   # Componentes do portfólio (Hero, Skills, etc.)
+│   │   └── header/      # Header, Footer, Navigation
+│   ├── data/            # Dados estruturados (about, projects, skills, experience)
+│   ├── pages/           # Páginas da aplicação
+│   │   ├── index.astro  # Home page
+│   │   ├── sobre/       # Página sobre
+│   │   ├── projetos/    # Página de projetos
+│   │   ├── links/       # Página de links
+│   │   ├── contato/     # Página de contato
+│   │   └── posts/       # Blog posts
+│   └── styles/          # Estilos globais
+├── package.json         # Dependências e scripts
+└── astro.config.mjs     # Configuração do Astro
+```
 
 ## ⚡ Otimização e Performance
 
-O projeto inclui diversas otimizações:
+O projeto foi desenvolvido com foco em performance e boas práticas:
 
-- **Imagens**: Lazy loading implementado em todas as imagens
-- **SEO**: Meta tags, Open Graph, e schema.org markup
-- **Acessibilidade**: Alt text em imagens, aria-labels em links, navegação por teclado
-- **Sitemap**: Gerado automaticamente
-- **Performance**: Build otimizado com Astro
+| Métrica | Descrição |
+|---------|-----------|
+| **Imagens** | Lazy loading implementado em todas as imagens |
+| **SEO** | Meta tags, Open Graph, schema.org markup |
+| **Acessibilidade** | Alt text em imagens, navegação por teclado, contraste adequado |
+| **Performance** | Build otimizado com Astro, code splitting automático |
+| **Sitemap** | Gerado automaticamente no build |
+| **Lighthouse** | Pontuação alvo: 90+ em todas as categorias |
 
 ## 🔧 Scripts
 
-```bash
-npm run dev      # Inicia servidor de desenvolvimento
-npm run build    # Build para produção
-npm run preview  # Preview do build
-```
+| Comando | Descrição |
+|---------|-----------|
+| `npm run dev` | Inicia servidor de desenvolvimento (http://localhost:4321) |
+| `npm run build` | Gera build otimizado para produção |
+| `npm run preview` | Preview do build localmente |
 
 ## 🌐 Implantação
 
-O projeto está configurado para implantação na Netlify com SSR.
+O projeto está configurado para implantação na **Netlify** com suporte a SSR.
+
+### Deploy Automático
+
+O deploy é acionado automaticamente ao fazer push para a branch `main`.
+
+### Deploy Manual
+
+```bash
+# Build de produção
+npm run build
+
+# Preview do build
+npm run preview
+```
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Sinta-se à vontade para usar e modificar conforme necessário.
+
+---
+
+**Desenvolvido por [Caio Toledo](https://caiotoledo.dev) 🚀**
