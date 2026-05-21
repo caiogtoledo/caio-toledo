@@ -138,35 +138,35 @@ avatar: "/avatar.png"
 ## ✅ Fase 4 - Criação de Páginas
 
 ### 4.1. Home Page (nova)
-- [ ] Criar `src/pages/index.astro`
-- [ ] Importar componentes: Hero, Skills, ProjectsShowcase, Experience
-- [ ] Estruturar seções em ordem lógica
-- [ ] Adicionar scroll suave entre seções
-- [ ] Otimizar para SEO (título, meta description)
+- [x] Criar `src/pages/index.astro`
+- [x] Importar componentes: Hero, Skills, ProjectsShowcase, Experience
+- [x] Estruturar seções em ordem lógica
+- [x] Adicionar scroll suave entre seções
+- [x] Otimizar para SEO (título, meta description)
 
 ### 4.2. Página Sobre
-- [ ] Criar `src/pages/sobre/index.astro`
-- [ ] Bio detalhada
-- [ ] Foto principal
-- [ ] Informações pessoais e profissionais
-- [ ] Timeline de carreira (opcional)
+- [x] Criar `src/pages/sobre/index.astro`
+- [x] Bio detalhada
+- [x] Foto principal
+- [x] Informações pessoais e profissionais
+- [x] Timeline de carreira (opcional)
 
 ### 4.3. Página Projetos
-- [ ] Criar `src/pages/projetos/index.astro`
-- [ ] Grid com todos os projetos
-- [ ] Filtros por tecnologia (opcional)
-- [ ] Modal ou página para detalhes do projeto
+- [x] Criar `src/pages/projetos/index.astro`
+- [x] Grid com todos os projetos
+- [x] Filtros por tecnologia (opcional)
+- [x] Modal ou página para detalhes do projeto
 
 ### 4.4. Página Contato
-- [ ] Criar `src/pages/contato/index.astro`
-- [ ] Formulário de contato (opcional)
-- [ ] Links para redes sociais
-- [ ] Email e outras formas de contato
+- [x] Criar `src/pages/contato/index.astro`
+- [x] Formulário de contato (opcional)
+- [x] Links para redes sociais
+- [x] Email e outras formas de contato
 
 ### 4.5. Atualizar página de Posts
-- [ ] Verificar `src/pages/posts/index.astro`
-- [ ] Garantir que navegação esteja consistente
-- [ ] Adicionar link para voltar ao home
+- [x] Verificar `src/pages/posts/index.astro`
+- [x] Garantir que navegação esteja consistente
+- [x] Adicionar link para voltar ao home
 
 ---
 
@@ -275,12 +275,12 @@ avatar: "/avatar.png"
 **Fase 1:** 7/7 ✅
 **Fase 2:** 16/16 ✅
 **Fase 3:** 24/24 ✅
-**Fase 4:** 0/20 
+**Fase 4:** 20/20 ✅ 
 **Fase 5:** 0/12 
 **Fase 6:** 0/18 
 **Fase 7:** 0/6 
 
-**Concluído:** 47/85 (55%)
+**Concluído:** 67/85 (79%)
 
 ---
 

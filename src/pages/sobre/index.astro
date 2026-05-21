@@ -1,0 +1,212 @@
+---
+import about from '../../data/about.js';
+import experience from '../../data/experience.js';
+
+const pageTitle = `Sobre - ${about.name}`;
+const pageDescription = `Conheça mais sobre ${about.name}, ${about.title}`;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{pageTitle}</title>
+		<meta name="description" content={pageDescription} />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={pageDescription} />
+		<meta property="og:type" content="website" />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={pageDescription} />
+	</head>
+	<body>
+		<section class="about-section">
+			<div class="about-content">
+				<div class="about-header">
+					<div class="about-avatar">
+						<img src={about.avatar} alt={about.name} />
+					</div>
+					<h1 class="about-name">{about.name}</h1>
+					<p class="about-title">{about.title}</p>
+					<p class="about-location">{about.location}</p>
+				</div>
+
+				<div class="about-bio">
+					<h2>Sobre Mim</h2>
+					<p>{about.bio}</p>
+				</div>
+
+				<div class="about-contact">
+					<h2>Contato</h2>
+					<div class="contact-info">
+						<a href={`mailto:${about.email}`}>{about.email}</a>
+					</div>
+				</div>
+
+				<div class="about-experience">
+					<h2>Experiência Profissional</h2>
+					<div class="experience-list">
+						{experience.map((exp) => (
+							<div class="experience-item">
+								<h3 class="exp-role">{exp.role}</h3>
+								<p class="exp-company">{exp.company}</p>
+								<p class="exp-period">{exp.period}</p>
+								<p class="exp-description">{exp.description}</p>
+								<div class="exp-tech">
+									{exp.technologies.map((tech) => (
+										<span class="tech-tag">{tech}</span>
+									))}
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>
+
+<style is:global>
+	.about-section {
+		min-height: 100vh;
+		padding: 4rem 2rem;
+		background: #0a0a0a;
+	}
+
+	.about-content {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.about-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.about-avatar {
+		width: 180px;
+		height: 180px;
+		margin: 0 auto 2rem;
+		border-radius: 50%;
+		overflow: hidden;
+		border: 4px solid #fff;
+	}
+
+	.about-avatar img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.about-name {
+		font-size: 3rem;
+		color: #fff;
+		margin-bottom: 0.5rem;
+	}
+
+	.about-title {
+		font-size: 1.5rem;
+		color: #ccc;
+		margin-bottom: 0.5rem;
+	}
+
+	.about-location {
+		color: #888;
+		font-size: 1.1rem;
+	}
+
+	.about-bio,
+	.about-contact,
+	.about-experience {
+		background: rgba(255, 255, 255, 0.05);
+		padding: 2rem;
+		border-radius: 10px;
+		margin-bottom: 2rem;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.about-bio h2,
+	.about-contact h2,
+	.about-experience h2 {
+		font-size: 2rem;
+		color: #fff;
+		margin-bottom: 1.5rem;
+	}
+
+	.about-bio p {
+		color: #aaa;
+		line-height: 1.8;
+		font-size: 1.1rem;
+	}
+
+	.contact-info a {
+		color: #fff;
+		text-decoration: none;
+		font-size: 1.2rem;
+		transition: color 0.3s;
+	}
+
+	.contact-info a:hover {
+		color: #ccc;
+	}
+
+	.experience-item {
+		background: rgba(255, 255, 255, 0.05);
+		padding: 1.5rem;
+		border-radius: 8px;
+		margin-bottom: 1.5rem;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.exp-role {
+		font-size: 1.4rem;
+		color: #fff;
+		margin-bottom: 0.5rem;
+	}
+
+	.exp-company {
+		color: #ccc;
+		font-size: 1.1rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.exp-period {
+		color: #888;
+		font-size: 0.95rem;
+		margin-bottom: 1rem;
+	}
+
+	.exp-description {
+		color: #aaa;
+		line-height: 1.6;
+		margin-bottom: 1rem;
+	}
+
+	.exp-tech {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.tech-tag {
+		background: rgba(255, 255, 255, 0.1);
+		color: #ccc;
+		padding: 0.3rem 0.8rem;
+		border-radius: 15px;
+		font-size: 0.85rem;
+	}
+
+	@media (max-width: 768px) {
+		.about-section {
+			padding: 3rem 1rem;
+		}
+
+		.about-name {
+			font-size: 2rem;
+		}
+
+		.about-title {
+			font-size: 1.2rem;
+		}
+	}
+</style>

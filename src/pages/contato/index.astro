@@ -1,0 +1,228 @@
+---
+import about from '../../data/about.js';
+
+const pageTitle = 'Contato - Caio Toledo';
+const pageDescription = 'Entre em contato para oportunidades e colaborações';
+---
+
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{pageTitle}</title>
+		<meta name="description" content={pageDescription} />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={pageDescription} />
+		<meta property="og:type" content="website" />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={pageDescription} />
+	</head>
+	<body>
+		<section class="contact-page">
+			<div class="contact-header">
+				<h1>Contato</h1>
+				<p>Vamos conversar sobre seu próximo projeto</p>
+			</div>
+
+			<div class="contact-content">
+				<div class="contact-info">
+					<p class="contact-text">
+						Estou sempre aberto a novas oportunidades e colaborações.
+						Entre em contato se tiver algum projeto interessante!
+					</p>
+
+					<div class="contact-details">
+						<div class="contact-item">
+							<span class="contact-icon">📧</span>
+							<div>
+								<strong>Email</strong>
+								<a href={`mailto:${about.email}`}>{about.email}</a>
+							</div>
+						</div>
+
+						<div class="contact-item">
+							<span class="contact-icon">📍</span>
+							<div>
+								<strong>Localização</strong>
+								<span>{about.location}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="social-section">
+					<h2>Redes Sociais</h2>
+					<div class="social-links">
+						<a
+							href="https://github.com/caiogtoledo"
+							class="social-link"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<span class="social-icon">💼</span>
+							<span>GitHub</span>
+						</a>
+						<a
+							href="https://linkedin.com/in/caio-toledo"
+							class="social-link"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<span class="social-icon">💼</span>
+							<span>LinkedIn</span>
+						</a>
+						<a
+							href="https://instagram.com/caiotoledo.dev"
+							class="social-link"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<span class="social-icon">📸</span>
+							<span>Instagram</span>
+						</a>
+						<a
+							href="https://x.com/caiogtoledo"
+							class="social-link"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<span class="social-icon">🐦</span>
+							<span>X (Twitter)</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>
+
+<style is:global>
+	.contact-page {
+		min-height: 100vh;
+		padding: 4rem 2rem;
+		background: #0a0a0a;
+	}
+
+	.contact-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.contact-header h1 {
+		font-size: 3rem;
+		color: #fff;
+		margin-bottom: 0.5rem;
+	}
+
+	.contact-header p {
+		color: #aaa;
+		font-size: 1.2rem;
+	}
+
+	.contact-content {
+		max-width: 800px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.contact-info {
+		background: rgba(255, 255, 255, 0.05);
+		padding: 2rem;
+		border-radius: 10px;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.contact-text {
+		font-size: 1.2rem;
+		color: #aaa;
+		line-height: 1.6;
+		margin-bottom: 2rem;
+	}
+
+	.contact-details {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.contact-item {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		color: #ccc;
+	}
+
+	.contact-item strong {
+		display: block;
+		color: #fff;
+		margin-bottom: 0.25rem;
+	}
+
+	.contact-item a {
+		color: #fff;
+		text-decoration: none;
+		transition: color 0.3s;
+	}
+
+	.contact-item a:hover {
+		color: #ccc;
+	}
+
+	.contact-icon {
+		font-size: 2rem;
+	}
+
+	.social-section h2 {
+		font-size: 2rem;
+		color: #fff;
+		margin-bottom: 1.5rem;
+		text-align: center;
+	}
+
+	.social-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		justify-content: center;
+	}
+
+	.social-link {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		background: rgba(255, 255, 255, 0.1);
+		color: #fff;
+		padding: 0.75rem 1.5rem;
+		border-radius: 5px;
+		text-decoration: none;
+		font-weight: 600;
+		transition: all 0.3s;
+	}
+
+	.social-link:hover {
+		background: rgba(255, 255, 255, 0.2);
+		transform: translateY(-2px);
+	}
+
+	.social-icon {
+		font-size: 1.2rem;
+	}
+
+	@media (max-width: 768px) {
+		.contact-page {
+			padding: 3rem 1rem;
+		}
+
+		.contact-header h1 {
+			font-size: 2rem;
+		}
+
+		.contact-item {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+</style>
