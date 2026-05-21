@@ -7,7 +7,7 @@ import about from '../../data/about.js';
   <div class="contact-content">
     <div class="contact-info">
       <p class="contact-text">
-        Estou sempre aberto a novas oportunidades e colaborações. 
+        Estou sempre aberto a novas oportunidades e colaborações.
         Entre em contato se tiver algum projeto interessante!
       </p>
       <div class="contact-details">
@@ -39,84 +39,109 @@ import about from '../../data/about.js';
 </section>
 
 <style is:global>
+.contact-section {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #fff;
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.contact-text {
+  font-size: 1.2rem;
+  color: #aaa;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.contact-item:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.social-link {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
   .contact-section {
-    padding: 4rem 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+    padding: 3rem 1rem;
   }
 
-  .contact-content {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+  .section-title {
+    font-size: 2rem;
   }
 
   .contact-text {
-    font-size: 1.2rem;
-    color: #aaa;
-    line-height: 1.6;
-    margin-bottom: 2rem;
+    font-size: 1rem;
   }
-
-  .contact-details {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-  }
-
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: #ccc;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s;
-  }
-
-  .contact-item:hover {
-    color: #fff;
-  }
-
-  .contact-icon {
-    font-size: 1.5rem;
-  }
-
-  .social-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-  }
-
-  .social-link {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
-  }
-
-  .social-link:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-  }
-
-  @media (max-width: 768px) {
-    .contact-section {
-      padding: 3rem 1rem;
-    }
-
-    .section-title {
-      font-size: 2rem;
-    }
-
-    .contact-text {
-      font-size: 1rem;
-    }
-  }
+}
 </style>

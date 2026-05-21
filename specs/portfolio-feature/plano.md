@@ -173,40 +173,40 @@ avatar: "/avatar.png"
 ## ✅ Fase 5 - Estilização e Design
 
 ### 5.1. Definir sistema de design
-- [ ] Escolher paleta de cores (manter tema escuro?)
-- [ ] Definir tipografia (fontes)
-- [ ] Criar variáveis CSS ou tokens de design
-- [ ] Documentar decisões em `design-system.md` (opcional)
+- [x] Escolher paleta de cores (manter tema escuro?)
+- [x] Definir tipografia (fontes)
+- [x] Criar variáveis CSS ou tokens de design
+- [x] Documentar decisões em `design-system.md` (opcional)
 
 ### 5.2. CSS Global
-- [ ] Atualizar `src/styles/global.css` (ou criar novo)
-- [ ] Reset CSS básico
-- [ ] Variáveis de cores e fonts
-- [ ] Estilos base para body, h1-h6, links
+- [x] Atualizar `src/styles/global.css` (ou criar novo)
+- [x] Reset CSS básico
+- [x] Variáveis de cores e fonts
+- [x] Estilos base para body, h1-h6, links
 
 ### 5.3. Navbar e Header
-- [ ] Estilizar navbar fixa
-- [ ] Adicionar logo/nome
-- [ ] Links de navegação com hover states
-- [ ] Menu mobile (hambúrguer) se necessário
+- [x] Estilizar navbar fixa
+- [x] Adicionar logo/nome
+- [x] Links de navegação com hover states
+- [x] Menu mobile (hambúrguer) se necessário
 
 ### 5.4. Responsividade
-- [ ] Testar em mobile (320px+)
-- [ ] Testar em tablet (768px)
-- [ ] Testar em desktop (1024px+)
-- [ ] Ajustar grids e layouts
+- [x] Testar em mobile (320px+)
+- [x] Testar em tablet (768px)
+- [x] Testar em desktop (1024px+)
+- [x] Ajustar grids e layouts
 
 ### 5.5. Animações e Transições
-- [ ] Adicionar fade-in nas seções (scroll reveal)
-- [ ] Hover effects em cards e botões
-- [ ] Transições suaves entre páginas
-- [ ] Animação de loading (opcional)
+- [x] Adicionar fade-in nas seções (scroll reveal)
+- [x] Hover effects em cards e botões
+- [x] Transições suaves entre páginas
+- [x] Animação de loading (opcional)
 
 ### 5.6. Rodapé (Footer)
-- [ ] Atualizar Footer com links de navegação
-- [ ] Adicionar copyright
-- [ ] Links para redes sociais
-- [ ] Manter consistência com design
+- [x] Atualizar Footer com links de navegação
+- [x] Adicionar copyright
+- [x] Links para redes sociais
+- [x] Manter consistência com design
 
 ---
 
@@ -275,12 +275,12 @@ avatar: "/avatar.png"
 **Fase 1:** 7/7 ✅
 **Fase 2:** 16/16 ✅
 **Fase 3:** 24/24 ✅
-**Fase 4:** 20/20 ✅ 
-**Fase 5:** 0/12 
-**Fase 6:** 0/18 
-**Fase 7:** 0/6 
+**Fase 4:** 20/20 ✅
+**Fase 5:** 24/24 ✅
+**Fase 6:** 0/18
+**Fase 7:** 0/6
 
-**Concluído:** 67/85 (79%)
+**Concluído:** 79/85 (93%)
 
 ---
 

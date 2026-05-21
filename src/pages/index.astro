@@ -1,8 +1,11 @@
 ---
+import Header from '../components/header/header.jsx';
+import Footer from '../components/Footer.jsx';
 import Hero from '../components/portfolio/Hero.astro';
 import Skills from '../components/portfolio/Skills.astro';
 import ProjectsShowcase from '../components/portfolio/ProjectsShowcase.astro';
 import Experience from '../components/portfolio/Experience.astro';
+import Contact from '../components/portfolio/Contact.astro';
 import about from '../data/about.js';
 
 const pageTitle = `${about.name} - ${about.title}`;
@@ -11,28 +14,37 @@ const pageDescription = about.bio;
 
 <!doctype html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{pageTitle}</title>
-		<meta name="description" content={pageDescription} />
-		<meta name="author" content={about.name} />
-		<meta property="og:title" content={pageTitle} />
-		<meta property="og:description" content={pageDescription} />
-		<meta property="og:type" content="website" />
-		<meta name="twitter:title" content={pageTitle} />
-		<meta name="twitter:description" content={pageDescription} />
-		<link rel="canonical" href={Astro.url} />
-		<style>
-			html {
-				scroll-behavior: smooth;
-			}
-		</style>
-	</head>
-	<body>
-		<Hero />
-		<Skills />
-		<ProjectsShowcase />
-		<Experience />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="author" content={about.name} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <link rel="canonical" href={Astro.url} />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <Hero />
+      <Skills />
+      <ProjectsShowcase />
+      <Experience />
+      <Contact />
+    </main>
+    <Footer />
+  </body>
 </html>
