@@ -1,44 +1,58 @@
-import * as React from "react"
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion"
-import { Menu, X, Home, User, Settings, Mail, Info } from "lucide-react"
+import * as React from "react";
+import { useState, useEffect } from "react";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+} from "framer-motion";
+import { Menu, X, Home, User, Settings, Mail, Info } from "lucide-react";
 
 interface MenuItem {
-  id: number
-  title: string
-  url: string
-  icon: React.ReactNode
+  id: number;
+  title: string;
+  url: string;
+  icon: React.ReactNode;
 }
 
 interface ScrollNavbarProps {
-  menuItems?: MenuItem[]
-  className?: string
+  menuItems?: MenuItem[];
+  className?: string;
 }
 
 const defaultMenuItems: MenuItem[] = [
   { id: 1, title: "Home", url: "/", icon: <Home className="w-5 h-5" /> },
   { id: 2, title: "About", url: "/about", icon: <User className="w-5 h-5" /> },
-  { id: 3, title: "Services", url: "/services", icon: <Settings className="w-5 h-5" /> },
-  { id: 4, title: "Contact", url: "/contact", icon: <Mail className="w-5 h-5" /> },
-  { id: 5, title: "Info", url: "/info", icon: <Info className="w-5 h-5" /> }
-]
+  {
+    id: 3,
+    title: "Services",
+    url: "/services",
+    icon: <Settings className="w-5 h-5" />,
+  },
+  {
+    id: 4,
+    title: "Contact",
+    url: "/contact",
+    icon: <Mail className="w-5 h-5" />,
+  },
+  { id: 5, title: "Info", url: "/info", icon: <Info className="w-5 h-5" /> },
+];
 
-export const Component: React.FC<ScrollNavbarProps> = ({ 
+export const Component: React.FC<ScrollNavbarProps> = ({
   menuItems = defaultMenuItems,
-  className = ""
+  className = "",
 }) => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState<number | null>(null);
 
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [hoveredItem, setHoveredItem] = useState<number | null>(null)
-
-  const { scrollY } = useScroll()
+  const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setIsScrolled(latest > 100)
-  })
+    setIsScrolled(latest > 100);
+  });
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const menuVariants = {
     closed: {
@@ -51,8 +65,8 @@ export const Component: React.FC<ScrollNavbarProps> = ({
         damping: 30,
         when: "afterChildren",
         staggerChildren: 0.05,
-        staggerDirection: -1
-      }
+        staggerDirection: -1,
+      },
     },
     open: {
       opacity: 1,
@@ -63,10 +77,10 @@ export const Component: React.FC<ScrollNavbarProps> = ({
         stiffness: 300,
         damping: 30,
         when: "beforeChildren",
-        staggerChildren: 0.1
-      }
-    }
-  }
+        staggerChildren: 0.1,
+      },
+    },
+  };
 
   const itemVariants = {
     closed: { y: 20, opacity: 0, scale: 0.8 },
@@ -74,14 +88,14 @@ export const Component: React.FC<ScrollNavbarProps> = ({
       y: 0,
       opacity: 1,
       scale: 1,
-      transition: { type: "spring", stiffness: 400, damping: 25 }
-    }
-  }
+      transition: { type: "spring", stiffness: 400, damping: 25 },
+    },
+  };
 
   const hamburgerVariants = {
     normal: { rotate: 0, scale: 1 },
-    scrolled: { rotate: 360, scale: 1.1 }
-  }
+    scrolled: { rotate: 360, scale: 1.1 },
+  };
 
   return (
     <>
@@ -100,9 +114,9 @@ export const Component: React.FC<ScrollNavbarProps> = ({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-          <a href="/" className="text-2xl font-bold text-foreground">
-            Logo
-          </a>
+              <a href="/" className="text-2xl font-bold text-foreground">
+                Logo
+              </a>
             </motion.div>
 
             {/* Desktop Menu */}
@@ -117,13 +131,13 @@ export const Component: React.FC<ScrollNavbarProps> = ({
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-              <a
-                href={item.url}
-                className="flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary transition-colors"
-              >
-  {item.icon}
-  <span>{item.title}</span>
-  </a>
+                    <a
+                      href={item.url}
+                      className="flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary transition-colors"
+                    >
+                      {item.icon}
+                      <span>{item.title}</span>
+                    </a>
                     {hoveredItem === item.id && (
                       <motion.div
                         layoutId="navbar-hover"
@@ -213,22 +227,22 @@ export const Component: React.FC<ScrollNavbarProps> = ({
                       whileHover={{ scale: 1.05, x: 10 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                <a
-                  href={item.url}
-                  onClick={toggleMenu}
-                  className="flex items-center space-x-4 p-4 rounded-xl hover:bg-muted transition-colors group"
-                >
-                  <motion.div
-                    className="text-primary"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {item.icon}
-                  </motion.div>
-                  <span className="text-lg font-medium text-foreground group-hover:text-primary">
-                    {item.title}
-                  </span>
-                </a>
+                      <a
+                        href={item.url}
+                        onClick={toggleMenu}
+                        className="flex items-center space-x-4 p-4 rounded-xl hover:bg-muted transition-colors group"
+                      >
+                        <motion.div
+                          className="text-primary"
+                          whileHover={{ rotate: 360 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          {item.icon}
+                        </motion.div>
+                        <span className="text-lg font-medium text-foreground group-hover:text-primary">
+                          {item.title}
+                        </span>
+                      </a>
                     </motion.div>
                   ))}
                 </div>
@@ -237,59 +251,28 @@ export const Component: React.FC<ScrollNavbarProps> = ({
                 <motion.div
                   className="absolute -top-2 -left-2 w-4 h-4 bg-primary rounded-full"
                   animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                 />
                 <motion.div
                   className="absolute -bottom-2 -right-2 w-3 h-3 bg-secondary rounded-full"
                   animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.8, 0.3] }}
-                  transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  transition={{
+                    duration: 2.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 0.5,
+                  }}
                 />
               </div>
             </motion.div>
           </>
         )}
       </AnimatePresence>
-
-      {/* Demo Content */}
-      <div className="pt-16">
-        <div className="min-h-screen bg-gradient-to-b from-background to-muted">
-          <div className="max-w-4xl mx-auto px-4 py-20">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center"
-            >
-              <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-                Scroll Navigation Demo
-              </h1>
-              <p className="text-xl text-muted-foreground mb-12">
-                Scroll down to see the navbar transform into a floating hamburger menu
-              </p>
-            </motion.div>
-
-            {/* Demo Sections */}
-            {Array.from({ length: 5 }).map((_, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-card border border-border rounded-2xl p-8 mb-8 shadow-sm"
-              >
-                <h2 className="text-2xl font-semibold text-foreground mb-4">
-                  Section {index + 1}
-                </h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
     </>
-  )
-}
+  );
+};
 export default Component;
