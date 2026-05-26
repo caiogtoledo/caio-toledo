@@ -48,62 +48,62 @@ Componente `animated-hero` do 21st.dev (tommyjepsen) — Hero com texto animado 
 ### Fase 1: Fundacao — Design System + shadcn + Tipografia
 **Objetivo**: Atualizar a base para suportar o novo visual
 
-- [ ] 1.1 Configurar shadcn/ui (`npx shadcn@latest init`) — gerar `components.json`, primitivos Button, Card, Badge
-- [ ] 1.2 Atualizar `design-system.css` — adicionar variavel `--accent-brand: 190 80% 50%` (cyan), atualizar `--accent` para usar cyan em vez de branco
-- [ ] 1.3 Atualizar `tailwind.config.js` — adicionar `brand: "hsl(var(--accent-brand))"`, font-family Sora/Inter, estender animacoes
-- [ ] 1.4 Adicionar Google Fonts — Sora (headings) + Inter (body) no Layout.astro, remover "Itim"
-- [ ] 1.5 Atualizar `--font-family` e `--font-family-heading` em design-system.css
-- [ ] 1.6 Remover dependencia `next` do package.json e corrigir import no scroll-navigation-menu.tsx (trocar `Link from "next/link"` por `<a>`)
-- [ ] 1.7 Instalar dependencias necessarias: `@astrojs/tsconfig`, verificar se `class-variance-authoriance` e `clsx` estao disponiveis (shadcn deps)
+- [x] 1.1 Configurar shadcn/ui (`npx shadcn@latest init`) — gerar `components.json`, primitivos Button, Card, Badge
+- [x] 1.2 Atualizar `design-system.css` — adicionar variavel `--accent-brand: 190 80% 50%` (cyan), atualizar `--accent` para usar cyan em vez de branco
+- [x] 1.3 Atualizar `tailwind.config.js` — adicionar `brand: "hsl(var(--accent-brand))"`, font-family Sora/Inter, estender animacoes
+- [x] 1.4 Adicionar Google Fonts — Sora (headings) + Inter (body) no Layout.astro, remover "Itim"
+- [x] 1.5 Atualizar `--font-family` e `--font-family-heading` em design-system.css
+- [x] 1.6 Remover dependencia `next` do package.json e corrigir import no scroll-navigation-menu.tsx (trocar `Link from "next/link"` por `<a>`)
+- [x] 1.7 Instalar dependencias necessarias: `@astrojs/tsconfig`, verificar se `class-variance-authoriance` e `clsx` estao disponiveis (shadcn deps)
 
 ### Fase 2: Hero Animado — Componente React com framer-motion
 **Objetivo**: Criar o hero com impacto visual e motion, como referencia animated-hero
 
-- [ ] 2.1 Criar `src/components/ui/animated-hero.tsx` — componente React com `client:visible`
-- [ ] 2.2 Implementar logica de titulos ciclicos — `useState` + `useEffect` com timeout, array de adjetivos relevantes: ["amazing", "innovative", "scalable", "efficient", "smart"]
-- [ ] 2.3 Implementar animacao de texto com framer-motion `motion.span` — spring physics, y-axis slide (initial y: -100, animate baseado no index ativo), opacity transitions
-- [ ] 2.4 Layout do hero — container mx-auto, flex col, gap-8, py-20 lg:py-40, items-center justify-center
-- [ ] 2.5 Badge/topo — Button variant="secondary" size="sm" com "Leia meu artigo de lancamento" + icone MoveRight
-- [ ] 2.6 Heading principal — `text-5xl md:text-7xl max-w-2xl tracking-tighter`, texto estatico "I build" em `text-foreground` + texto animado em `text-brand` (cyan) com font-semibold
-- [ ] 2.7 Subtitulo — `text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center`
-- [ ] 2.8 CTAs — Dois botoes: "Fale comigo" (outline + PhoneCall) e "Ver Projetos" (primary + MoveRight), `size="lg"`, `gap-4`
-- [ ] 2.9 Integrar no `index.astro` — substituir `<Hero />` por `<AnimatedHero client:visible />`
-- [ ] 2.10 Garantir responsividade — mobile: headings menores, CTAs empilhados
+- [x] 2.1 Criar `src/components/ui/animated-hero.tsx` — componente React com `client:visible`
+- [x] 2.2 Implementar logica de titulos ciclicos — `useState` + `useEffect` com timeout, array de adjetivos relevantes: ["amazing", "innovative", "scalable", "efficient", "smart"]
+- [x] 2.3 Implementar animacao de texto com framer-motion `motion.span` — spring physics, y-axis slide (initial y: -100, animate baseado no index ativo), opacity transitions
+- [x] 2.4 Layout do hero — container mx-auto, flex col, gap-8, py-20 lg:py-40, items-center justify-center
+- [x] 2.5 Badge/topo — Button variant="secondary" size="sm" com "Leia meu artigo de lancamento" + icone MoveRight
+- [x] 2.6 Heading principal — `text-5xl md:text-7xl max-w-2xl tracking-tighter`, texto estatico "I build" em `text-foreground` + texto animado em `text-brand` (cyan) com font-semibold
+- [x] 2.7 Subtitulo — `text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center`
+- [x] 2.8 CTAs — Dois botoes: "Fale comigo" (outline + PhoneCall) e "Ver Projetos" (primary + MoveRight), `size="lg"`, `gap-4`
+- [x] 2.9 Integrar no `index.astro` — substituir `<Hero />` por `<AnimatedHero client:visible />`
+- [x] 2.10 Garantir responsividade — mobile: headings menores, CTAs empilhados
 
 ### Fase 3: Migracao para Tailwind — Componentes Portfolio
 **Objetivo**: Converter todos componentes Astro de CSS raw para Tailwind, usando shadcn primitivos
 
-- [ ] 3.1 Criar `src/components/portfolio/Skills.tsx` — React component, grid com shadcn Card, Badge para tags, Tailwind classes
-- [ ] 3.2 Criar `src/components/portfolio/ProjectsShowcase.tsx` — React component, cards com shadcn Card, image hover scale, Tailwind
-- [ ] 3.3 Criar `src/components/portfolio/Experience.tsx` — React component, timeline com Tailwind, border-l accent
-- [ ] 3.4 Criar `src/components/portfolio/Contact.tsx` — React component, lucide-react icons (Mail, MapPin) em vez de emojis, shadcn Button para links
-- [ ] 3.5 Atualizar `index.astro` — importar novos componentes React com `client:visible`
-- [ ] 3.6 Remover arquivos `.astro` antigos de portfolio (Hero.astro, Skills.astro, ProjectsShowcase.astro, Experience.astro, Contact.astro)
-- [ ] 3.7 Remover arquivos CSS legados (`footer.css`, `header.css`, `linkCard.css`, `profile.css`, `postCard.css`, `_Posts.css`)
+- [x] 3.1 Criar `src/components/portfolio/Skills.tsx` — React component, grid com shadcn Card, Badge para tags, Tailwind classes
+- [x] 3.2 Criar `src/components/portfolio/ProjectsShowcase.tsx` — React component, cards com shadcn Card, image hover scale, Tailwind
+- [x] 3.3 Criar `src/components/portfolio/Experience.tsx` — React component, timeline com Tailwind, border-l accent
+- [x] 3.4 Criar `src/components/portfolio/Contact.tsx` — React component, lucide-react icons (Mail, MapPin) em vez de emojis, shadcn Button para links
+- [x] 3.5 Atualizar `index.astro` — importar novos componentes React com `client:visible`
+- [x] 3.6 Remover arquivos `.astro` antigos de portfolio (Hero.astro, Skills.astro, ProjectsShowcase.astro, Experience.astro, Contact.astro)
+- [x] 3.7 Remover arquivos CSS legados (`footer.css`, `header.css`, `linkCard.css`, `profile.css`, `postCard.css`, `_Posts.css`) — NOTA: mantidos pois ainda sao usados por pages/posts e pages/links
 
 ### Fase 4: Motion System — Animacoes Coesas
 **Objetivo**: Sistema de animacao unificado com framer-motion
 
-- [ ] 4.1 Criar `src/lib/animations.ts` — variantes reutilizaveis: `fadeInUp`, `staggerContainer`, `scaleIn`, `slideIn`
-- [ ] 4.2 Criar `src/hooks/useScrollReveal.ts` — hook com IntersectionObserver centralizado (substituir scripts duplicados)
-- [ ] 4.3 Aplicar `whileInView` do framer-motion em Skills cards — stagger 0.1s, fade-in + slide-up
-- [ ] 4.4 Aplicar `whileInView` em Projects cards — stagger com hover scale
-- [ ] 4.5 Aplicar `whileInView` em Experience timeline — slide-in da esquerda
-- [ ] 4.6 Aplicar `whileInView` em Contact section — fade-in sequencial
-- [ ] 4.7 Adicionar micro-interacoes — hover spring nos cards, tap scale nos botoes, hover lift nos skill tags
-- [ ] 4.8 Remover todos `<script>` de scrollReveal duplicados dos componentes antigos
+- [x] 4.1 Criar `src/lib/animations.ts` — variantes reutilizaveis: `fadeInUp`, `staggerContainer`, `scaleIn`, `slideIn`
+- [x] 4.2 Criar `src/hooks/useScrollReveal.ts` — hook com IntersectionObserver centralizado (substituir scripts duplicados)
+- [x] 4.3 Aplicar `whileInView` do framer-motion em Skills cards — stagger 0.1s, fade-in + slide-up
+- [x] 4.4 Aplicar `whileInView` em Projects cards — stagger com hover scale
+- [x] 4.5 Aplicar `whileInView` em Experience timeline — slide-in da esquerda
+- [x] 4.6 Aplicar `whileInView` em Contact section — fade-in sequencial
+- [x] 4.7 Adicionar micro-interacoes — hover spring nos cards, tap scale nos botoes, hover lift nos skill tags
+- [x] 4.8 Remover todos `<script>` de scrollReveal duplicados dos componentes antigos
 
 ### Fase 5: Refinamento Visual + Polish
 **Objetivo**: Detalhes que elevam o design de "bom" para "excelente"
 
-- [ ] 5.1 Adicionar gradiente sutil de fundo — `bg-gradient-to-b from-background via-background to-muted` no body
-- [ ] 5.2 Refinar cards — `backdrop-blur-md` nos cards de vidro, `bg-card/50` com `border-border/50`
-- [ ] 5.3 Adicionar glow sutil no accent — `shadow-[0_0_20px_hsl(190_80%_50%/0.15)]` nos elementos brand
-- [ ] 5.4 Hero avatar com ring accent — `ring-2 ring-brand` ao redor do avatar no hero
-- [ ] 5.5 Smooth scroll com offset para nav fixa — `scroll-margin-top` nas secoes com id
-- [ ] 5.6 Transicoes de pagina — fade-in suave no body load
-- [ ] 5.7 Cursor spotlight / grid background sutil (opcional) — efeito de grid dots no hero
-- [ ] 5.8 Verificar acessibilidade — contrast ratio com nova cor brand, focus-visible rings
+- [x] 5.1 Adicionar gradiente sutil de fundo — `bg-gradient-to-b from-background via-background to-muted` no body
+- [x] 5.2 Refinar cards — `backdrop-blur-md` nos cards de vidro, `bg-card/50` com `border-border/50`
+- [x] 5.3 Adicionar glow sutil no accent — `shadow-[0_0_20px_hsl(190_80%_50%/0.15)]` nos elementos brand
+- [x] 5.4 Hero avatar com ring accent — `ring-2 ring-brand` ao redor do avatar no hero
+- [x] 5.5 Smooth scroll com offset para nav fixa — `scroll-margin-top` nas secoes com id
+- [x] 5.6 Transicoes de pagina — fade-in suave no body load
+- [x] 5.7 Cursor spotlight / grid background sutil (opcional) — efeito de grid dots no hero
+- [x] 5.8 Verificar acessibilidade — contrast ratio com nova cor brand, focus-visible rings
 
 ---
 

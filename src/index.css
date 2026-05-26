@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 :root {
-  font-family: "Itim", cursive;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
@@ -31,6 +31,7 @@
 body {
   margin: 0;
   min-height: 100vh;
+  background: linear-gradient(to bottom, hsl(var(--background)), hsl(var(--background)), hsl(var(--muted)));
 }
 
 a {
@@ -41,6 +42,13 @@ a {
 
 a:hover {
   color: var(--color-text-secondary);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid hsl(var(--accent-brand));
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -57,4 +65,17 @@ p {
   max-width: 400px;
   text-align: center;
   padding: 2rem;
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+body {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

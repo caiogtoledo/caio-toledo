@@ -1,9 +1,7 @@
-"use client"
 import * as React from "react"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion"
 import { Menu, X, Home, User, Settings, Mail, Info } from "lucide-react"
-import Link from "next/link"
 
 interface MenuItem {
   id: number
@@ -102,9 +100,9 @@ export const Component: React.FC<ScrollNavbarProps> = ({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link href="/" className="text-2xl font-bold text-foreground">
-                Logo
-              </Link>
+          <a href="/" className="text-2xl font-bold text-foreground">
+            Logo
+          </a>
             </motion.div>
 
             {/* Desktop Menu */}
@@ -119,13 +117,13 @@ export const Component: React.FC<ScrollNavbarProps> = ({
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Link
-                      href={item.url}
-                      className="flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary transition-colors"
-                    >
-                      {item.icon}
-                      <span>{item.title}</span>
-                    </Link>
+              <a
+                href={item.url}
+                className="flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary transition-colors"
+              >
+  {item.icon}
+  <span>{item.title}</span>
+  </a>
                     {hoveredItem === item.id && (
                       <motion.div
                         layoutId="navbar-hover"
@@ -215,22 +213,22 @@ export const Component: React.FC<ScrollNavbarProps> = ({
                       whileHover={{ scale: 1.05, x: 10 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <Link
-                        href={item.url}
-                        onClick={toggleMenu}
-                        className="flex items-center space-x-4 p-4 rounded-xl hover:bg-muted transition-colors group"
-                      >
-                        <motion.div
-                          className="text-primary"
-                          whileHover={{ rotate: 360 }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          {item.icon}
-                        </motion.div>
-                        <span className="text-lg font-medium text-foreground group-hover:text-primary">
-                          {item.title}
-                        </span>
-                      </Link>
+                <a
+                  href={item.url}
+                  onClick={toggleMenu}
+                  className="flex items-center space-x-4 p-4 rounded-xl hover:bg-muted transition-colors group"
+                >
+                  <motion.div
+                    className="text-primary"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {item.icon}
+                  </motion.div>
+                  <span className="text-lg font-medium text-foreground group-hover:text-primary">
+                    {item.title}
+                  </span>
+                </a>
                     </motion.div>
                   ))}
                 </div>

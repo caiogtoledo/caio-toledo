@@ -29,18 +29,19 @@
 --secondary-foreground: 0 0% 98%;
 --muted: 0 0% 14.9%;
 --muted-foreground: 0 0% 63.9%;
---accent: 0 0% 14.9%;
---accent-foreground: 0 0% 98%;
+  --accent: 190 80% 50%;
+  --accent-foreground: 0 0% 9%;
+  --accent-brand: 190 80% 50%;
 --destructive: 0 62.8% 30.6%;
 --destructive-foreground: 0 0% 98%;
 --border: 0 0% 14.9%;
 --input: 0 0% 14.9%;
---ring: 0 0% 83.1%;
+  --ring: 190 80% 50%;
 --radius: 0.5rem;
   
   /* Tipografia */
-  --font-family: "Itim", cursive;
-  --font-family-heading: "Itim", cursive;
+  --font-family: "Inter", sans-serif;
+  --font-family-heading: "Sora", sans-serif;
   
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;

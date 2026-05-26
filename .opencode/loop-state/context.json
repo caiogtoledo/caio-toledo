@@ -1,0 +1,345 @@
+{
+  "info": {
+    "id": "ses_19dcee9b2ffe9iiflNBicjepLX",
+    "slug": "eager-planet",
+    "projectID": "27b4b560964faa3e85daf3206ff3f115c2423496",
+    "directory": "[redacted:session-directory:ses_19dcee9b2ffe9iiflNBicjepLX]",
+    "path": "",
+    "title": "[redacted:session-title:ses_19dcee9b2ffe9iiflNBicjepLX]",
+    "agent": "build",
+    "model": {
+      "id": "z-ai/glm-5.1",
+      "providerID": "nvidia"
+    },
+    "version": "1.15.10",
+    "summary": {
+      "additions": 0,
+      "deletions": 0,
+      "files": 0
+    },
+    "cost": 0,
+    "tokens": {
+      "input": 29570,
+      "output": 104,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "time": {
+      "created": 1779763844685,
+      "updated": 1779763880855
+    }
+  },
+  "messages": [
+    {
+      "info": {
+        "role": "user",
+        "time": {
+          "created": 1779763844847
+        },
+        "agent": "build",
+        "model": {
+          "providerID": "nvidia",
+          "modelID": "z-ai/glm-5.1"
+        },
+        "summary": {
+          "diffs": []
+        },
+        "id": "msg_e623116e9001TBrwVe5Ln0MNOo",
+        "sessionID": "ses_19dcee9b2ffe9iiflNBicjepLX"
+      },
+      "parts": [
+        {
+          "type": "text",
+          "text": "[redacted:text:prt_e623116e9002LI9Tmf10a8vdgx]",
+          "id": "prt_e623116e9002LI9Tmf10a8vdgx",
+          "sessionID": "ses_19dcee9b2ffe9iiflNBicjepLX",
+          "messageID": "msg_e623116e9001TBrwVe5Ln0MNOo"
+        },
+        {
+          "type": "file",
+          "mime": "text/plain",
+          "filename": "[redacted:file-name:prt_e623116e9003L4baDoUt7D1O8F]",
+          "url": "[redacted:file-url:prt_e623116e9003L4baDoUt7D1O8F]",
+          "source": {
+            "text": {
+              "value": "[redacted:file-text:prt_e623116e9003L4baDoUt7D1O8F]",
+              "start": 24,
+              "end": 66
+            },
+            "type": "file",
+            "path": "[redacted:file-path:prt_e623116e9003L4baDoUt7D1O8F]"
+          },
+          "id": "prt_e623116e9003L4baDoUt7D1O8F",
+          "sessionID": "ses_19dcee9b2ffe9iiflNBicjepLX",
+          "messageID": "msg_e623116e9001TBrwVe5Ln0MNOo"
+        },
+        {
+          "type": "text",
+          "synthetic": true,
+          "text": "[redacted:text:prt_e623116f1001SfzFofp97HTilS]",
+          "id": "prt_e623116f1001SfzFofp97HTilS",
+          "sessionID": "ses_19dcee9b2ffe9iiflNBicjepLX",
+          "messageID": "msg_e623116e9001TBrwVe5Ln0MNOo"
+        },
+        {
+          "type": "text",
+          "synthetic": true,
+          "text": "[redacted:text:prt_e623116f10022ZEQVoBdsw8303]",
+          "id": "prt_e623116f10022ZEQVoBdsw8303",
+          "sessionID": "ses_19dcee9b2ffe9iiflNBicjepLX",
+          "messageID": "msg_e623116e9001TBrwVe5Ln0MNOo"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_e623116e9001TBrwVe5Ln0MNOo",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "[redacted:cwd:msg_e6231176d0016QArcNb4omYqR4]",
+          "root": "[redacted:root:msg_e6231176d0016QArcNb4omYqR4]"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 14180,
+          "input": 14168,
+          "output": 12,
+          "reasoning": 0,
+          "cache": {
+            "write": 0,
+            "read": 0
+          }
+        },
+        "modelID": "z-ai/glm-5.1",
+        "providerID": "nvidia",
+        "time": {
+          "created": 1779763844973,
+          "completed": 1779763865941
+        },
+        "finish": "tool-calls",
+        "id": "msg_e6231176d0016QArcNb4omYqR4",
+        "sessionID": "ses_19dcee9b2ffe9iiflNBicjepLX"
+      },
+      "parts": [
+        {
+          "snapshot": "[redacted:snapshot:prt_e62316029001d8gpnNjw28h5qP]",
+          "type": "step-start",
+          "id": "prt_e62316029001d8gpnNjw28h5qP",
+          "sessionID": "ses_19dcee9b2ffe9iiflNBicjepLX",
+          "messageID": "msg_e6231176d0016QArcNb4omYqR4"
+        },
+        {
+          "type": "tool",
+          "tool": "skill",
+          "callID": "chatcmpl-tool-8d9b737a9aa1ac1a",
+          "state": {
+            "status": "completed",
+            "input": {
+              "redacted": "tool-input:prt_e623168fb001yVsdeXhrGy33DT"
+            },
+            "output": "[redacted:tool-output:prt_e623168fb001yVsdeXhrGy33DT]",
+            "metadata": {
+              "redacted": "tool-state-metadata:prt_e623168fb001yVsdeXhrGy33DT"
+            },
+            "title": "[redacted:tool-title:prt_e623168fb001yVsdeXhrGy33DT]",
+            "time": {
+              "start": 1779763865857,
+              "end": 1779763865877
+            }
+          },
+          "id": "prt_e623168fb001yVsdeXhrGy33DT",
+          "sessionID": "ses_19dcee9b2ffe9iiflNBicjepLX",
+          "messageID": "msg_e6231176d0016QArcNb4omYqR4"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "[redacted:snapshot:prt_e6231693d001eGFJxw3L4wAzSg]",
+          "type": "step-finish",
+          "tokens": {
+            "total": 14180,
+            "input": 14168,
+            "output": 12,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 0
+            }
+          },
+          "cost": 0,
+          "id": "prt_e6231693d001eGFJxw3L4wAzSg",
+          "sessionID": "ses_19dcee9b2ffe9iiflNBicjepLX",
+          "messageID": "msg_e6231176d0016QArcNb4omYqR4"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_e623116e9001TBrwVe5Ln0MNOo",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "[redacted:cwd:msg_e62316957001S5p4yF7R5JxyrW]",
+          "root": "[redacted:root:msg_e62316957001S5p4yF7R5JxyrW]"
+        },
+        "cost": 0,
+        "tokens": {
+          "total": 15494,
+          "input": 15402,
+          "output": 92,
+          "reasoning": 0,
+          "cache": {
+            "write": 0,
+            "read": 0
+          }
+        },
+        "modelID": "z-ai/glm-5.1",
+        "providerID": "nvidia",
+        "time": {
+          "created": 1779763865943,
+          "completed": 1779763880815
+        },
+        "finish": "tool-calls",
+        "id": "msg_e62316957001S5p4yF7R5JxyrW",
+        "sessionID": "ses_19dcee9b2ffe9iiflNBicjepLX"
+      },
+      "parts": [
+        {
+          "snapshot": "[redacted:snapshot:prt_e62317114001mw0aScCzXeulWp]",
+          "type": "step-start",
+          "id": "prt_e62317114001mw0aScCzXeulWp",
+          "sessionID": "ses_19dcee9b2ffe9iiflNBicjepLX",
+          "messageID": "msg_e62316957001S5p4yF7R5JxyrW"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "chatcmpl-tool-bf915447ad6723d8",
+          "state": {
+            "status": "completed",
+            "input": {
+              "redacted": "tool-input:prt_e623171d2001MBDG1kaTqme3pa"
+            },
+            "output": "[redacted:tool-output:prt_e623171d2001MBDG1kaTqme3pa]",
+            "metadata": {
+              "redacted": "tool-state-metadata:prt_e623171d2001MBDG1kaTqme3pa"
+            },
+            "title": "[redacted:tool-title:prt_e623171d2001MBDG1kaTqme3pa]",
+            "time": {
+              "start": 1779763868967,
+              "end": 1779763868969
+            }
+          },
+          "id": "prt_e623171d2001MBDG1kaTqme3pa",
+          "sessionID": "ses_19dcee9b2ffe9iiflNBicjepLX",
+          "messageID": "msg_e62316957001S5p4yF7R5JxyrW"
+        },
+        {
+          "type": "tool",
+          "tool": "read",
+          "callID": "chatcmpl-tool-baeceb3b44f6a342",
+          "state": {
+            "status": "completed",
+            "input": {
+              "redacted": "tool-input:prt_e62317517001CQqvzllh7qw5R2"
+            },
+            "output": "[redacted:tool-output:prt_e62317517001CQqvzllh7qw5R2]",
+            "metadata": {
+              "redacted": "tool-state-metadata:prt_e62317517001CQqvzllh7qw5R2"
+            },
+            "title": "[redacted:tool-title:prt_e62317517001CQqvzllh7qw5R2]",
+            "time": {
+              "start": 1779763880744,
+              "end": 1779763880752
+            }
+          },
+          "id": "prt_e62317517001CQqvzllh7qw5R2",
+          "sessionID": "ses_19dcee9b2ffe9iiflNBicjepLX",
+          "messageID": "msg_e62316957001S5p4yF7R5JxyrW"
+        },
+        {
+          "reason": "tool-calls",
+          "snapshot": "[redacted:snapshot:prt_e6231a355001csX8CaD6kBkWl5]",
+          "type": "step-finish",
+          "tokens": {
+            "total": 15494,
+            "input": 15402,
+            "output": 92,
+            "reasoning": 0,
+            "cache": {
+              "write": 0,
+              "read": 0
+            }
+          },
+          "cost": 0,
+          "id": "prt_e6231a355001csX8CaD6kBkWl5",
+          "sessionID": "ses_19dcee9b2ffe9iiflNBicjepLX",
+          "messageID": "msg_e62316957001S5p4yF7R5JxyrW"
+        }
+      ]
+    },
+    {
+      "info": {
+        "parentID": "msg_e623116e9001TBrwVe5Ln0MNOo",
+        "role": "assistant",
+        "mode": "build",
+        "agent": "build",
+        "path": {
+          "cwd": "[redacted:cwd:msg_e6231a3700012g7UMfrLyiOUgq]",
+          "root": "[redacted:root:msg_e6231a3700012g7UMfrLyiOUgq]"
+        },
+        "cost": 0,
+        "tokens": {
+          "input": 0,
+          "output": 0,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "modelID": "z-ai/glm-5.1",
+        "providerID": "nvidia",
+        "time": {
+          "created": 1779763880816
+        },
+        "id": "msg_e6231a3700012g7UMfrLyiOUgq",
+        "sessionID": "ses_19dcee9b2ffe9iiflNBicjepLX"
+      },
+      "parts": [
+        {
+          "snapshot": "[redacted:snapshot:prt_e6231af58001RZOlVz1f3ufdVx]",
+          "type": "step-start",
+          "id": "prt_e6231af58001RZOlVz1f3ufdVx",
+          "sessionID": "ses_19dcee9b2ffe9iiflNBicjepLX",
+          "messageID": "msg_e6231a3700012g7UMfrLyiOUgq"
+        },
+        {
+          "type": "tool",
+          "tool": "bash",
+          "callID": "chatcmpl-tool-bfea40fa02bd432b",
+          "state": {
+            "metadata": {
+              "redacted": "tool-state-metadata:prt_e6231b0f00018pq9HSAuKrSJH8"
+            },
+            "status": "running",
+            "input": {
+              "redacted": "tool-input:prt_e6231b0f00018pq9HSAuKrSJH8"
+            },
+            "time": {
+              "start": 1779763890049
+            }
+          },
+          "id": "prt_e6231b0f00018pq9HSAuKrSJH8",
+          "sessionID": "ses_19dcee9b2ffe9iiflNBicjepLX",
+          "messageID": "msg_e6231a3700012g7UMfrLyiOUgq"
+        }
+      ]
+    }
+  ]
+}

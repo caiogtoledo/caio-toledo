@@ -5,8 +5,16 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-site: 'https://caiotoledo.dev',
-output: 'server',
-adapter: netlify(),
-integrations: [react(), sitemap()],
+  site: 'https://caiotoledo.dev',
+  output: 'server',
+  adapter: netlify(),
+  integrations: [react(), sitemap()],
+  vite: {
+    optimizeDeps: {
+      include: ['react', 'react-dom/client', 'react/jsx-runtime']
+    },
+    ssr: {
+      external: ['react-dom']
+    }
+  }
 });
