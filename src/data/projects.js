@@ -1,8 +1,14 @@
 const projects = [
   {
     id: 1,
-    name: "Portfolio Pessoal",
-    description: "Site de portfólio pessoal desenvolvido com Astro, featuring design responsivo, SEO otimizado e performance de alta qualidade. Inclui seções de projetos, experiência, habilidades e contato.",
+    name: {
+      en: "Personal Portfolio",
+      pt: "Portfolio Pessoal",
+    },
+    description: {
+      en: "Personal portfolio site built with Astro, featuring responsive design, optimized SEO, and high performance. Includes projects, experience, skills, and contact sections.",
+      pt: "Site de portfólio pessoal desenvolvido com Astro, featuring design responsivo, SEO otimizado e performance de alta qualidade. Inclui seções de projetos, experiência, habilidades e contato.",
+    },
     technologies: ["Astro", "JavaScript", "CSS", "Netlify"],
     repoUrl: "https://github.com/caiogtoledo/portfolio",
     demoUrl: "https://caiotoledo.dev",
@@ -10,8 +16,14 @@ const projects = [
   },
   {
     id: 2,
-    name: "TaskFlow - App de Tarefas",
-    description: "Aplicativo de gerenciamento de tarefas com interface intuitiva e recursos de drag-and-drop. Permite organização por projetos, etiquetas e prioridades com sincronização em tempo real.",
+    name: {
+      en: "TaskFlow - Task App",
+      pt: "TaskFlow - App de Tarefas",
+    },
+    description: {
+      en: "Task management app with intuitive interface and drag-and-drop features. Supports organization by projects, tags, and priorities with real-time sync.",
+      pt: "Aplicativo de gerenciamento de tarefas com interface intuitiva e recursos de drag-and-drop. Permite organização por projetos, etiquetas e prioridades com sincronização em tempo real.",
+    },
     technologies: ["React", "Node.js", "MongoDB", "Socket.io", "TailwindCSS"],
     repoUrl: "https://github.com/caiogtoledo/taskflow",
     demoUrl: "https://taskflow-demo.vercel.app",
@@ -19,8 +31,14 @@ const projects = [
   },
   {
     id: 3,
-    name: "E-commerce API",
-    description: "API RESTful completa para plataforma de e-commerce com autenticação JWT, gerenciamento de produtos, carrinho de compras, pedidos e integração com gateway de pagamento.",
+    name: {
+      en: "E-commerce API",
+      pt: "E-commerce API",
+    },
+    description: {
+      en: "Complete RESTful API for e-commerce platform with JWT authentication, product management, shopping cart, orders, and payment gateway integration.",
+      pt: "API RESTful completa para plataforma de e-commerce com autenticação JWT, gerenciamento de produtos, carrinho de compras, pedidos e integração com gateway de pagamento.",
+    },
     technologies: ["Node.js", "Express", "PostgreSQL", "JWT", "Stripe API"],
     repoUrl: "https://github.com/caiogtoledo/ecommerce-api",
     demoUrl: "https://ecommerce-api-docs.vercel.app",
@@ -28,8 +46,14 @@ const projects = [
   },
   {
     id: 4,
-    name: "Weather Dashboard",
-    description: "Dashboard meteorológico que consome dados de múltiplas APIs para exibir previsções do tempo em tempo real com gráficos interativos e histórico de consultas.",
+    name: {
+      en: "Weather Dashboard",
+      pt: "Weather Dashboard",
+    },
+    description: {
+      en: "Weather dashboard consuming data from multiple APIs to display real-time forecasts with interactive charts and query history.",
+      pt: "Dashboard meteorológico que consome dados de múltiplas APIs para exibir previsões do tempo em tempo real com gráficos interativos e histórico de consultas.",
+    },
     technologies: ["React", "TypeScript", "Chart.js", "OpenWeather API"],
     repoUrl: "https://github.com/caiogtoledo/weather-dashboard",
     demoUrl: "https://weather-dash-demo.netlify.app",
@@ -37,8 +61,14 @@ const projects = [
   },
   {
     id: 5,
-    name: "Blog Platform",
-    description: "Plataforma de blog com editor markdown, sistema de comentários, autenticação de usuários e deploy automático via CI/CD. Suporta múltiplos autores e categorias.",
+    name: {
+      en: "Blog Platform",
+      pt: "Blog Platform",
+    },
+    description: {
+      en: "Blog platform with markdown editor, comment system, user authentication, and automatic deploy via CI/CD. Supports multiple authors and categories.",
+      pt: "Plataforma de blog com editor markdown, sistema de comentários, autenticação de usuários e deploy automático via CI/CD. Suporta múltiplos autores e categorias.",
+    },
     technologies: ["Next.js", "Prisma", "PostgreSQL", "Markdown", "GitHub Actions"],
     repoUrl: "https://github.com/caiogtoledo/blog-platform",
     demoUrl: "https://blog-platform-demo.vercel.app",

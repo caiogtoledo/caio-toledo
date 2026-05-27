@@ -30,9 +30,9 @@ const canonicalURL = Astro.url.href;
   </style>
   <main>
     <AnimatedHero client:only="react" lang={lang} />
-    <Skills client:visible />
-    <ProjectsShowcase client:visible />
-    <Experience client:visible />
+    <Skills client:visible lang={lang} />
+    <ProjectsShowcase client:visible lang={lang} />
+    <Experience client:visible lang={lang} />
     <Contact client:visible />
   </main>
   <Footer />

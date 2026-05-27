@@ -5,7 +5,7 @@ import { Badge } from "../ui/badge"
 import { Briefcase } from "lucide-react"
 import { slideIn, staggerContainer } from "../../lib/animations"
 
-export default function Experience() {
+export default function Experience({ lang = "en" }) {
   return (
     <section id="experience" className="mx-auto max-w-3xl px-4 py-16 lg:px-8 lg:py-24">
       <motion.h2
@@ -43,7 +43,7 @@ export default function Experience() {
                   {exp.company}
                 </h4>
                 <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-                  {exp.description}
+                  {exp.description[lang]}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {exp.technologies.map((tech) => (

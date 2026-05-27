@@ -1,29 +1,34 @@
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { PhoneCall, MoveRight } from "lucide-react"
-import { Button } from "./button"
-import about from "../../data/about.js"
-import translations from "../../data/translations.js"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { PhoneCall, MoveRight } from "lucide-react";
+import { Button } from "./button";
+import about from "../../data/about.js";
+import translations from "../../data/translations.js";
 
-const adjectives = ["amazing", "innovative", "scalable", "efficient", "smart"]
+const adjectives = ["amazing", "innovative", "scalable", "efficient", "smart"];
 
-export default function AnimatedHero({ lang = "en" }: { lang?: string }) {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const t = translations[lang] || translations.en
+export default function AnimatedHero({
+  lang = "en",
+}: {
+  lang?: keyof typeof translations;
+}) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const t = translations[lang] || translations.en;
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % adjectives.length)
-    }, 2000)
-    return () => clearInterval(interval)
-  }, [])
+      setActiveIndex((prev) => (prev + 1) % adjectives.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative flex min-h-[80vh] flex-col items-center justify-center gap-8 py-20 lg:py-40">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: "radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)",
+          backgroundImage:
+            "radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)",
           backgroundSize: "24px 24px",
         }}
       />
@@ -34,10 +39,10 @@ export default function AnimatedHero({ lang = "en" }: { lang?: string }) {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <img
-            src={about.avatar}
+            src="https://avatars.githubusercontent.com/u/63592244?s=400&u=4838eef867080d58bb9281573b66ee3fce7ab338&v=4"
             alt={about.name}
-            width={120}
-            height={120}
+            width={180}
+            height={180}
             className="rounded-full ring-2 ring-brand ring-offset-2 ring-offset-background shadow-[0_0_20px_hsl(190_80%_50%/0.15)]"
           />
         </motion.div>
@@ -61,7 +66,7 @@ export default function AnimatedHero({ lang = "en" }: { lang?: string }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <span className="text-foreground">I build </span>
+          <span className="text-foreground">Caio</span>
           <span className="relative inline-flex h-[1.2em] w-fit items-center overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.span
@@ -80,7 +85,7 @@ export default function AnimatedHero({ lang = "en" }: { lang?: string }) {
               </motion.span>
             </AnimatePresence>
           </span>
-          <span className="text-foreground"> things</span>
+          <span className="text-foreground"> Toledo</span>
         </motion.div>
 
         <motion.p
@@ -117,5 +122,5 @@ export default function AnimatedHero({ lang = "en" }: { lang?: string }) {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

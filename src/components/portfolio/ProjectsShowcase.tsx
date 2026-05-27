@@ -6,7 +6,7 @@ import { Button } from "../ui/button"
 import { ExternalLink, GitFork } from "lucide-react"
 import { fadeInUp, staggerContainer } from "../../lib/animations"
 
-export default function ProjectsShowcase() {
+export default function ProjectsShowcase({ lang = "en" }) {
   return (
     <section id="projects" className="mx-auto max-w-6xl px-4 py-16 lg:px-8 lg:py-24">
       <motion.h2
@@ -31,7 +31,7 @@ export default function ProjectsShowcase() {
               <div className="h-48 overflow-hidden bg-muted">
                 <img
                   src={project.image}
-                  alt={`Projeto ${project.name}`}
+                  alt={`Projeto ${project.name[lang]}`}
                   loading="lazy"
                   width="400"
                   height="200"
@@ -40,12 +40,12 @@ export default function ProjectsShowcase() {
               </div>
               <CardHeader>
                 <CardTitle className="font-heading text-xl font-medium text-foreground">
-                  {project.name}
+                  {project.name[lang]}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  {project.description}
+                  {project.description[lang]}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
