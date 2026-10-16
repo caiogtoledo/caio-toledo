@@ -6,7 +6,8 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "framer-motion";
-import { Menu, X, Home, User, Settings, Mail, Info } from "lucide-react";
+import { Menu, X, Home, Code2, FolderGit2, Briefcase, Mail, Newspaper } from "lucide-react";
+import translations from "../../data/translations.js";
 
 interface MenuItem {
   id: number;
@@ -22,26 +23,44 @@ interface ScrollNavbarProps {
 
 const defaultMenuItems: MenuItem[] = [
   { id: 1, title: "Home", url: "/", icon: <Home className="w-5 h-5" /> },
-  { id: 2, title: "About", url: "/about", icon: <User className="w-5 h-5" /> },
+  {
+    id: 2,
+    title: "Skills",
+    url: "/#skills",
+    icon: <Code2 className="w-5 h-5" />,
+  },
   {
     id: 3,
-    title: "Services",
-    url: "/services",
-    icon: <Settings className="w-5 h-5" />,
+    title: "Projects",
+    url: "/#projects",
+    icon: <FolderGit2 className="w-5 h-5" />,
   },
   {
     id: 4,
+    title: "Experience",
+    url: "/#experience",
+    icon: <Briefcase className="w-5 h-5" />,
+  },
+  {
+    id: 5,
     title: "Contact",
-    url: "/contact",
+    url: "/#contact",
     icon: <Mail className="w-5 h-5" />,
   },
-  { id: 5, title: "Info", url: "/info", icon: <Info className="w-5 h-5" /> },
+  {
+    id: 6,
+    title: "Blog",
+    url: "/posts",
+    icon: <Newspaper className="w-5 h-5" />,
+  },
 ];
 
-export const Component: React.FC<ScrollNavbarProps> = ({
+export const Component: React.FC<ScrollNavbarProps & { lang?: keyof typeof translations }> = ({
   menuItems = defaultMenuItems,
+  lang = "en",
   className = "",
 }) => {
+  const t = translations[lang] || translations.en;
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
@@ -53,44 +72,6 @@ export const Component: React.FC<ScrollNavbarProps> = ({
   });
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
-  const menuVariants = {
-    closed: {
-      opacity: 0,
-      scale: 0.8,
-      y: -50,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 30,
-        when: "afterChildren",
-        staggerChildren: 0.05,
-        staggerDirection: -1,
-      },
-    },
-    open: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 30,
-        when: "beforeChildren",
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    closed: { y: 20, opacity: 0, scale: 0.8 },
-    open: {
-      y: 0,
-      opacity: 1,
-      scale: 1,
-      transition: { type: "spring", stiffness: 400, damping: 25 },
-    },
-  };
 
   const hamburgerVariants = {
     normal: { rotate: 0, scale: 1 },
@@ -114,8 +95,12 @@ export const Component: React.FC<ScrollNavbarProps> = ({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <a href="/" className="text-2xl font-bold text-foreground">
-                Logo
+              <a href="/" className="flex items-center" aria-label="Caio Toledo">
+                <img
+                  src="/glasses.png"
+                  alt="Caio Toledo"
+                  className="h-9 w-auto"
+                />
               </a>
             </motion.div>
 
@@ -136,7 +121,7 @@ export const Component: React.FC<ScrollNavbarProps> = ({
                       className="flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium text-foreground hover:text-primary transition-colors"
                     >
                       {item.icon}
-                      <span>{item.title}</span>
+                      <span>{t.nav[item.title.toLowerCase()] || item.title}</span>
                     </a>
                     {hoveredItem === item.id && (
                       <motion.div
@@ -200,14 +185,14 @@ export const Component: React.FC<ScrollNavbarProps> = ({
             />
 
             {/* Menu Container */}
-            <motion.div
-              variants={menuVariants}
-              initial="closed"
-              animate="open"
-              exit="closed"
-              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50"
-            >
-              <div className="relative bg-background border border-border rounded-3xl p-8 shadow-2xl min-w-[300px]">
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.85, y: -24 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.85, y: -24 }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                className="pointer-events-auto relative w-full max-w-[340px] bg-background border border-border rounded-3xl p-8 shadow-2xl sm:w-auto sm:min-w-[320px]"
+              >
                 {/* Close Button */}
                 <motion.button
                   onClick={toggleMenu}
@@ -223,7 +208,14 @@ export const Component: React.FC<ScrollNavbarProps> = ({
                   {menuItems.map((item, index) => (
                     <motion.div
                       key={item.id}
-                      variants={itemVariants}
+                      initial={{ opacity: 0, y: 20, scale: 0.8 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      transition={{
+                        delay: 0.1 + index * 0.06,
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 25,
+                      }}
                       whileHover={{ scale: 1.05, x: 10 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -240,7 +232,7 @@ export const Component: React.FC<ScrollNavbarProps> = ({
                           {item.icon}
                         </motion.div>
                         <span className="text-lg font-medium text-foreground group-hover:text-primary">
-                          {item.title}
+                          {t.nav[item.title.toLowerCase()] || item.title}
                         </span>
                       </a>
                     </motion.div>
@@ -267,8 +259,8 @@ export const Component: React.FC<ScrollNavbarProps> = ({
                     delay: 0.5,
                   }}
                 />
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </>
         )}
       </AnimatePresence>

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import projects from "../../data/projects.js"
+import translations from "../../data/translations.js"
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
 import { Badge } from "../ui/badge"
 import { Button } from "../ui/button"
@@ -7,6 +8,7 @@ import { ExternalLink, GitFork } from "lucide-react"
 import { fadeInUp, staggerContainer } from "../../lib/animations"
 
 export default function ProjectsShowcase({ lang = "en" }) {
+  const t = translations[lang] || translations.en;
   return (
     <section id="projects" className="mx-auto max-w-6xl px-4 py-16 lg:px-8 lg:py-24">
       <motion.h2
@@ -16,7 +18,7 @@ export default function ProjectsShowcase({ lang = "en" }) {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
       >
-        Projetos
+        {t.sections.projects}
       </motion.h2>
       <motion.div
         className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
@@ -55,16 +57,18 @@ export default function ProjectsShowcase({ lang = "en" }) {
                   ))}
                 </div>
                 <div className="flex gap-3 pt-2">
-                  <Button variant="outline" size="sm" className="gap-2" asChild>
-                    <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
-                      <GitFork className="h-4 w-4" />
-                      Repositorio
-                    </a>
-                  </Button>
+                  {project.repoUrl && (
+                    <Button variant="outline" size="sm" className="gap-2" asChild>
+                      <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
+                        <GitFork className="h-4 w-4" />
+                        {t.projects.repo}
+                      </a>
+                    </Button>
+                  )}
                   <Button size="sm" className="gap-2" asChild>
                     <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="h-4 w-4" />
-                      Demo
+                      {t.projects.demo}
                     </a>
                   </Button>
                 </div>

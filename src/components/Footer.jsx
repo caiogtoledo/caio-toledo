@@ -1,6 +1,9 @@
 import './footer.css'
 
-function Footer() {
+import translations from "../data/translations.js";
+
+function Footer({ lang = "en" }) {
+  const t = translations[lang] || translations.en;
   const currentYear = new Date().getFullYear();
   
   return (
@@ -9,12 +12,12 @@ function Footer() {
         <div className="footer-section">
           <h3 className="footer-logo">Caio Toledo</h3>
           <p className="footer-text">
-            Desenvolvedor de Software apaixonado por criar soluções inovadoras.
+            {t.footer.bio}
           </p>
         </div>
         
         <div className="footer-section">
-          <h4 className="footer-title">Navegação</h4>
+          <h4 className="footer-title">{t.footer.navigation}</h4>
           <ul className="footer-links">
             <li><a href="/">Home</a></li>
             <li><a href="/sobre">Sobre</a></li>
@@ -26,7 +29,7 @@ function Footer() {
         </div>
         
         <div className="footer-section">
-          <h4 className="footer-title">Redes Sociais</h4>
+          <h4 className="footer-title">{t.footer.social}</h4>
           <div className="footer-social">
             <a href="https://github.com/caiogtoledo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               GitHub
@@ -45,7 +48,7 @@ function Footer() {
       </div>
       
       <div className="footer-bottom">
-        <p>&copy; {currentYear} Caio Toledo. Todos os direitos reservados.</p>
+        <p>&copy; {currentYear} Caio Toledo. {t.footer.rights}</p>
       </div>
     </footer>
   )

@@ -141,7 +141,7 @@ const translations = {
 const about = {
   name: "Caio Toledo",
   title: "Full Stack Developer",
-  email: "contato@caiotoledo.dev",
+  email: "caiotoledodev@gmail.com",
   location: "Sao Paulo, Brazil",
   avatar: "/avatar.png",
 }
@@ -204,36 +204,36 @@ const skills = [
 
 **Objetivo**: Todos os componentes React leem textos do translations em vez de hardcoded
 
-- [ ] 2.1 Atualizar `src/components/ui/animated-hero.tsx`:
-  - Receber `lang` prop (ja recebe)
-  - Usar `t.hero.badge`, `t.hero.heading`, `t.hero.headingSuffix`, `t.hero.adjectives`, `t.hero.ctaContact`, `t.hero.ctaProjects`
-  - Remover array `adjectives` hardcoded
-  - Remover textos hardcoded em PT-BR
+- [x] 2.1 Atualizar `src/components/ui/animated-hero.tsx`:
+- Receber `lang` prop (ja recebe)
+- Usar `t.hero.badge`, `t.hero.heading`, `t.hero.headingSuffix`, `t.hero.adjectives`, `t.hero.ctaContact`, `t.hero.ctaProjects`
+- Remover array `adjectives` hardcoded
+- Remover textos hardcoded em PT-BR
 
-- [ ] 2.2 Atualizar `src/components/portfolio/Skills.tsx`:
-  - Receber `lang` prop
-  - Usar `t.sections.skills` para o titulo da secao
-  - Usar `skillGroup.category[lang]` ou `skillGroup.category` (compatibilidade)
+- [x] 2.2 Atualizar `src/components/portfolio/Skills.tsx`:
+- Receber `lang` prop
+- Usar `t.sections.skills` para o titulo da secao
+- Usar `skillGroup.category[lang]` ou `skillGroup.category` (compatibilidade)
 
-- [ ] 2.3 Atualizar `src/components/portfolio/ProjectsShowcase.tsx`:
-  - Receber `lang` prop
-  - Usar `t.sections.projects` para o titulo
-  - Usar `t.projects.repo`, `t.projects.demo` para botoes
-  - Usar `project.name[lang]`, `project.description[lang]`
+- [x] 2.3 Atualizar `src/components/portfolio/ProjectsShowcase.tsx`:
+- Receber `lang` prop
+- Usar `t.sections.projects` para o titulo
+- Usar `t.projects.repo`, `t.projects.demo` para botoes
+- Usar `project.name[lang]`, `project.description[lang]`
 
-- [ ] 2.4 Atualizar `src/components/portfolio/Experience.tsx`:
-  - Receber `lang` prop
-  - Usar `t.sections.experience` para o titulo
-  - Usar `exp.description[lang]`
+- [x] 2.4 Atualizar `src/components/portfolio/Experience.tsx`:
+- Receber `lang` prop
+- Usar `t.sections.experience` para o titulo
+- Usar `exp.description[lang]`
 
-- [ ] 2.5 Atualizar `src/components/portfolio/Contact.tsx`:
-  - Receber `lang` prop
-  - Usar `t.sections.contact` para o titulo
-  - Usar `t.contact.description` para o texto
+- [x] 2.5 Atualizar `src/components/portfolio/Contact.tsx`:
+- Receber `lang` prop
+- Usar `t.sections.contact` para o titulo
+- Usar `t.contact.description` para o texto
 
-- [ ] 2.6 Atualizar `src/components/Footer.jsx`:
-  - Receber `lang` prop
-  - Usar `t.footer.bio`, `t.footer.navigation`, `t.footer.social`, `t.footer.rights`
+- [x] 2.6 Atualizar `src/components/Footer.jsx`:
+- Receber `lang` prop
+- Usar `t.footer.bio`, `t.footer.navigation`, `t.footer.social`, `t.footer.rights`
 
 ---
 

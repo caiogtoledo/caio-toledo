@@ -27,6 +27,10 @@ const canonicalURL = Astro.url.href;
     body {
       overflow-x: hidden;
     }
+
+    section[id] {
+      scroll-margin-top: 5rem;
+    }
   </style>
   <main>
     <AnimatedHero client:only="react" lang={lang} />

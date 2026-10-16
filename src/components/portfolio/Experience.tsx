@@ -1,11 +1,13 @@
 import { motion } from "framer-motion"
 import experience from "../../data/experience.js"
+import translations from "../../data/translations.js"
 import { Card, CardContent } from "../ui/card"
 import { Badge } from "../ui/badge"
 import { Briefcase } from "lucide-react"
 import { slideIn, staggerContainer } from "../../lib/animations"
 
 export default function Experience({ lang = "en" }) {
+  const t = translations[lang] || translations.en;
   return (
     <section id="experience" className="mx-auto max-w-3xl px-4 py-16 lg:px-8 lg:py-24">
       <motion.h2
@@ -15,7 +17,7 @@ export default function Experience({ lang = "en" }) {
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.5 }}
       >
-        Experiencia
+        {t.sections.experience}
       </motion.h2>
       <motion.div
         className="relative border-l-2 border-border pl-8"

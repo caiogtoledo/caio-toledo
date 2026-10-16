@@ -1,6 +1,7 @@
 ---
 import ScrollNavigationMenu from "./scroll-navigation-menu";
+export let lang: string = "en";
 ---
 
 <!-- Global navigation component rendered client‑side -->
-<ScrollNavigationMenu client:only="react" />
+<ScrollNavigationMenu client:only="react" lang={lang} />

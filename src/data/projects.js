@@ -2,77 +2,44 @@ const projects = [
   {
     id: 1,
     name: {
-      en: "Personal Portfolio",
-      pt: "Portfolio Pessoal",
+      en: "PierX Inovação",
+      pt: "PierX Inovação",
     },
     description: {
-      en: "Personal portfolio site built with Astro, featuring responsive design, optimized SEO, and high performance. Includes projects, experience, skills, and contact sections.",
-      pt: "Site de portfólio pessoal desenvolvido com Astro, featuring design responsivo, SEO otimizado e performance de alta qualidade. Inclui seções de projetos, experiência, habilidades e contato.",
+      en: "Platform that simplifies access to tax incentives, funding and innovation grants. Includes a matchmaking tool that connects companies to public funding calls, Lei do Bem management and a radar of innovation opportunities.",
+      pt: "Plataforma que desburocratiza o acesso a incentivos fiscais, financiamentos e bolsas de inovação. Inclui ferramenta de matchmaking que conecta empresas a editais de fomento, gestão da Lei do Bem e radar de oportunidades de inovação.",
     },
-    technologies: ["Astro", "JavaScript", "CSS", "Netlify"],
-    repoUrl: "https://github.com/caiogtoledo/portfolio",
-    demoUrl: "https://caiotoledo.dev",
-    image: "/projects/portfolio.png"
+    technologies: ["Next.js", "Framer", "Vercel"],
+    demoUrl: "https://www.pierxinovacao.com.br/",
+    image: "/projects/pierx.png"
   },
   {
     id: 2,
     name: {
-      en: "TaskFlow - Task App",
-      pt: "TaskFlow - App de Tarefas",
+      en: "Diagnóstico Cultura Pieracciani",
+      pt: "Diagnóstico Cultura Pieracciani",
     },
     description: {
-      en: "Task management app with intuitive interface and drag-and-drop features. Supports organization by projects, tags, and priorities with real-time sync.",
-      pt: "Aplicativo de gerenciamento de tarefas com interface intuitiva e recursos de drag-and-drop. Permite organização por projetos, etiquetas e prioridades com sincronização em tempo real.",
+      en: "Interactive culture diagnostic web app for Pieracciani consultancy. Assesses innovation-culture maturity through questionnaires and delivers structured results, with event tracking via Google Tag Manager.",
+      pt: "Aplicativo web interativo de diagnóstico de cultura para a consultoria Pieracciani. Avalia a maturidade cultural para inovação por meio de questionários e entrega resultados estruturados, com tracking de eventos via Google Tag Manager.",
     },
-    technologies: ["React", "Node.js", "MongoDB", "Socket.io", "TailwindCSS"],
-    repoUrl: "https://github.com/caiogtoledo/taskflow",
-    demoUrl: "https://taskflow-demo.vercel.app",
-    image: "/projects/taskflow.png"
+    technologies: ["React", "Netlify", "Google Tag Manager"],
+    demoUrl: "https://diagnostico-cultura-pieracciani.netlify.app/",
+    image: "/projects/diagnostico-cultura.png"
   },
   {
     id: 3,
     name: {
-      en: "E-commerce API",
-      pt: "E-commerce API",
+      en: "Ponte Universitária",
+      pt: "Ponte Universitária",
     },
     description: {
-      en: "Complete RESTful API for e-commerce platform with JWT authentication, product management, shopping cart, orders, and payment gateway integration.",
-      pt: "API RESTful completa para plataforma de e-commerce com autenticação JWT, gerenciamento de produtos, carrinho de compras, pedidos e integração com gateway de pagamento.",
+      en: "Platform connecting high school students with verified university students for 1:1 mentoring calls about courses, daily routine and entrance exams.",
+      pt: "Plataforma que conecta estudantes do ensino médio a universitários verificados para mentorias 1:1 sobre o curso, a rotina e o vestibular.",
     },
-    technologies: ["Node.js", "Express", "PostgreSQL", "JWT", "Stripe API"],
-    repoUrl: "https://github.com/caiogtoledo/ecommerce-api",
-    demoUrl: "https://ecommerce-api-docs.vercel.app",
-    image: "/projects/ecommerce-api.png"
-  },
-  {
-    id: 4,
-    name: {
-      en: "Weather Dashboard",
-      pt: "Weather Dashboard",
-    },
-    description: {
-      en: "Weather dashboard consuming data from multiple APIs to display real-time forecasts with interactive charts and query history.",
-      pt: "Dashboard meteorológico que consome dados de múltiplas APIs para exibir previsões do tempo em tempo real com gráficos interativos e histórico de consultas.",
-    },
-    technologies: ["React", "TypeScript", "Chart.js", "OpenWeather API"],
-    repoUrl: "https://github.com/caiogtoledo/weather-dashboard",
-    demoUrl: "https://weather-dash-demo.netlify.app",
-    image: "/projects/weather.png"
-  },
-  {
-    id: 5,
-    name: {
-      en: "Blog Platform",
-      pt: "Blog Platform",
-    },
-    description: {
-      en: "Blog platform with markdown editor, comment system, user authentication, and automatic deploy via CI/CD. Supports multiple authors and categories.",
-      pt: "Plataforma de blog com editor markdown, sistema de comentários, autenticação de usuários e deploy automático via CI/CD. Suporta múltiplos autores e categorias.",
-    },
-    technologies: ["Next.js", "Prisma", "PostgreSQL", "Markdown", "GitHub Actions"],
-    repoUrl: "https://github.com/caiogtoledo/blog-platform",
-    demoUrl: "https://blog-platform-demo.vercel.app",
-    image: "/projects/blog-platform.png"
+    technologies: ["React", "Vercel"],
+    demoUrl: "https://www.ponteuniversitaria.com.br/",
+    image: "/projects/ponte.png"
   }
 ]
 

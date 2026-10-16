@@ -18,6 +18,7 @@ const translations = {
       projects: "Projects",
       experience: "Experience",
       contact: "Contact",
+      blog: "Blog",
     },
     sections: {
       skills: "Skills",
@@ -60,6 +61,7 @@ const translations = {
       projects: "Projetos",
       experience: "Experiência",
       contact: "Contato",
+      blog: "Blog",
     },
     sections: {
       skills: "Habilidades",

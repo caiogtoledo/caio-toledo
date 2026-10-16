@@ -5,7 +5,7 @@ import { Button } from "./button";
 import about from "../../data/about.js";
 import translations from "../../data/translations.js";
 
-const adjectives = ["amazing", "innovative", "scalable", "efficient", "smart"];
+
 
 export default function AnimatedHero({
   lang = "en",
@@ -17,7 +17,7 @@ export default function AnimatedHero({
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % adjectives.length);
+      setActiveIndex((prev) => (prev + 1) % t.hero.adjectives.length);
     }, 2000);
     return () => clearInterval(interval);
   }, []);
@@ -54,7 +54,7 @@ export default function AnimatedHero({
         >
           <Button variant="secondary" size="sm" className="gap-2" asChild>
             <a href="#projects">
-              Leia meu artigo de lancamento
+              {t.hero.badge}
               <MoveRight className="h-4 w-4" />
             </a>
           </Button>
@@ -81,7 +81,7 @@ export default function AnimatedHero({
                   damping: 15,
                 }}
               >
-                {adjectives[activeIndex]}
+                {t.hero.adjectives[activeIndex]}
               </motion.span>
             </AnimatePresence>
           </span>
@@ -107,14 +107,14 @@ export default function AnimatedHero({
             <Button variant="outline" size="lg" className="gap-2" asChild>
               <a href={`mailto:${about.email}`}>
                 <PhoneCall className="h-4 w-4" />
-                Fale comigo
+                {t.hero.ctaContact}
               </a>
             </Button>
           </motion.div>
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
             <Button size="lg" className="gap-2" asChild>
               <a href="#projects">
-                Ver Projetos
+                {t.hero.ctaProjects}
                 <MoveRight className="h-4 w-4" />
               </a>
             </Button>

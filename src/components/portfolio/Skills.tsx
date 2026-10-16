@@ -1,10 +1,12 @@
 import { motion } from "framer-motion"
 import skills from "../../data/skills.js"
+import translations from "../../data/translations.js"
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
 import { Badge } from "../ui/badge"
 import { fadeInUp, staggerContainer } from "../../lib/animations"
 
 export default function Skills({ lang = "en" }) {
+  const t = translations[lang] || translations.en;
   return (
     <section id="skills" className="mx-auto max-w-6xl px-4 py-16 lg:px-8 lg:py-24">
       <motion.h2
@@ -14,7 +16,7 @@ export default function Skills({ lang = "en" }) {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
       >
-        Skills
+{translations[lang].sections.skills}
       </motion.h2>
       <motion.div
         className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"

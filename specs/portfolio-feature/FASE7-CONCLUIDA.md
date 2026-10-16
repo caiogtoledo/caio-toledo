@@ -57,7 +57,7 @@ Esta fase focou em preencher todo o conteúdo do portfólio, revisar e validar t
 - Navegação entre páginas funcionando
 
 ### Informações de Contato
-- Email: contato@caiotoledo.dev
+- Email: caiotoledodev@gmail.com
 - Location: São Paulo, Brasil
 - GitHub: https://github.com/caiogtoledo
 - LinkedIn: https://linkedin.com/in/caio-toledo

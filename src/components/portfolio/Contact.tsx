@@ -1,11 +1,13 @@
 import { motion } from "framer-motion"
-import { Mail, MapPin, ExternalLink } from "lucide-react"
+import { Mail, ExternalLink } from "lucide-react"
 import { Button } from "../ui/button"
 import about from "../../data/about.js"
+import translations from "../../data/translations.js"
 import links from "../../data/links.js"
 import { fadeInUp, staggerContainer } from "../../lib/animations"
 
-export default function Contact() {
+export default function Contact({ lang = "en" }) {
+  const t = translations[lang] || translations.en;
   return (
     <section id="contact" className="mx-auto max-w-3xl px-4 py-16 text-center lg:px-8 lg:py-24">
       <motion.h2
@@ -15,7 +17,7 @@ export default function Contact() {
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
       >
-        Contato
+        {t.sections.contact}
       </motion.h2>
       <motion.div
         className="flex flex-col gap-8"
@@ -28,8 +30,7 @@ export default function Contact() {
           className="mx-auto max-w-xl text-lg leading-relaxed text-muted-foreground"
           variants={fadeInUp}
         >
-          Estou sempre aberto a novas oportunidades e colaboracoes.
-          Entre em contato se tiver algum projeto interessante!
+          {t.contact.description}
         </motion.p>
 
         <motion.div className="flex flex-col items-center gap-3" variants={fadeInUp}>
@@ -40,10 +41,6 @@ export default function Contact() {
             <Mail className="h-5 w-5" />
             {about.email}
           </a>
-          <div className="flex items-center gap-3 rounded-lg border border-border/50 bg-card/50 px-6 py-3 text-muted-foreground backdrop-blur-md">
-            <MapPin className="h-5 w-5" />
-            {about.location}
-          </div>
         </motion.div>
 
         <motion.div
