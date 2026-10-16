@@ -1,10 +1,20 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import netlify from '@astrojs/netlify';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-    output: 'server',
-    adapter: netlify(),
-    integrations: [react()],
+  site: 'https://caiotoledo.dev',
+  output: 'server',
+  adapter: netlify(),
+  integrations: [react(), sitemap()],
+  vite: {
+    optimizeDeps: {
+      include: ['react', 'react-dom/client', 'react/jsx-runtime']
+    },
+    ssr: {
+      external: ['react-dom']
+    }
+  }
 });

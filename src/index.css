@@ -1,14 +1,18 @@
+@import './styles/design-system.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  font-family: "Itim", cursive;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: large;
-  line-height: 1.5;
-  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background: linear-gradient(140deg, rgba(0, 0, 0, 1) 0%, rgba(45, 45, 45, 1) 50%, rgba(81, 81, 81, 1) 100%);
+  color-scheme: dark;
+  color: var(--color-text-primary);
+  background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 50%, var(--color-bg-tertiary) 100%);
 
   min-height: 100vh;
 
@@ -18,9 +22,60 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, hsl(var(--background)), hsl(var(--background)), hsl(var(--muted)));
+}
+
+a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--color-text-secondary);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid hsl(var(--accent-brand));
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+p {
+  color: var(--color-text-muted);
+}
+
 .link-tree {
   margin: auto;
   max-width: 400px;
   text-align: center;
   padding: 2rem;
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+body {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

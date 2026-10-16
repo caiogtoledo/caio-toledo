@@ -1,27 +1,44 @@
 ---
+import '../index.css';
+import GlobalNav from '../components/ui/GlobalNav.astro';
+
 interface Props {
-	title: string;
+  title: string;
+  description?: string;
+  canonicalURL?: string;
 }
 
-const { title } = Astro.props;
-import '../index.css';
----
+// Language detection (default EN)
+const url = new URL(Astro.request.url);
+const lang = url.searchParams.get('lang') ?? 'en';
 
+const { title, description = "Caio Toledo - Developer & Content Creator", canonicalURL } = Astro.props;
+---
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Caio Toledo - Developer & Content Creator" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
-		<meta name="google-adsense-account" content="ca-pub-7889495393756954">
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang={lang}>
+<head>
+<meta charset="UTF-8" />
+<meta name="description" content={description} />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="google-adsense-account" content="ca-pub-7889495393756954">
+<meta name="generator" content={Astro.generator} />
+<meta name="robots" content="index, follow" />
+{canonicalURL && <link rel="canonical" href={canonicalURL} />}
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content="website" />
+{canonicalURL && <meta property="og:url" content={canonicalURL} />}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<title>{title}</title>
+</head>
+  <body>
+    <GlobalNav />
+    <slot />
+  </body>
 </html>

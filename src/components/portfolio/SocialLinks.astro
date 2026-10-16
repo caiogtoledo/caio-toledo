@@ -1,0 +1,80 @@
+---
+import links from '../../data/links.js';
+---
+
+<div class="social-links-compact">
+  {links.map((item, index) => (
+    <a 
+      href={item.link} 
+      class="social-link-item"
+      target={item.link.startsWith('http') ? '_blank' : undefined}
+      rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+      style={`animation-delay: ${index * 0.05}s`}
+    >
+      {item.logo && <img src={item.logo} alt={item.linkName} class="link-logo" />}
+      <span class="link-name">{item.linkName}</span>
+    </a>
+  ))}
+</div>
+
+<style is:global>
+  .social-links-compact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .social-link-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ccc;
+    padding: 0.75rem 1.25rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.5s ease-out both;
+  }
+
+  .social-link-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .link-logo {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .social-links-compact {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .social-link-item {
+      width: 100%;
+      max-width: 300px;
+      justify-content: center;
+    }
+  }
+</style>

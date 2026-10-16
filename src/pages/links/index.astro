@@ -1,0 +1,17 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import GlobalNav from '../../components/ui/GlobalNav.astro';
+import Profile from '../../components/profile/profile';
+import Cards from '../../components/cards/cards';
+import links from '../../data/links';
+import Footer from '../../components/Footer.jsx';
+---
+
+<Layout title="Links - Caio Toledo">
+  <div class="link-tree">
+    <GlobalNav />
+    <Profile />
+    <Cards links={links} />
+    <Footer />
+  </div>
+</Layout>

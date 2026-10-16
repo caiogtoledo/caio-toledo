@@ -1,17 +1,43 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/header/header';
-import Profile from '../components/profile/profile';
-import Cards from '../components/cards/cards';
-import links from '../external/links';
-import Footer from '../components/footer/footer';
+import Footer from '../components/Footer.jsx';
+import AnimatedHero from '../components/ui/animated-hero';
+import Skills from '../components/portfolio/Skills';
+import ProjectsShowcase from '../components/portfolio/ProjectsShowcase';
+import Experience from '../components/portfolio/Experience';
+import Contact from '../components/portfolio/Contact';
+import about from '../data/about.js';
+import translations from '../data/translations.js';
+
+const url = new URL(Astro.request.url);
+const lang = url.searchParams.get('lang') ?? 'en';
+const t = translations[lang] || translations.en;
+
+const pageTitle = `${about.name} - ${t.about.title}`;
+const pageDescription = t.about.bio;
+const canonicalURL = Astro.url.href;
 ---
 
-<Layout title="Caio Toledo">
-	<div class="link-tree">
-		<Header />
-		<Profile />
-		<Cards links={links} />
-		<Footer />
-	</div>
+<Layout title={pageTitle} description={pageDescription} canonicalURL={canonicalURL}>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    section[id] {
+      scroll-margin-top: 5rem;
+    }
+  </style>
+  <main>
+    <AnimatedHero client:only="react" lang={lang} />
+    <Skills client:visible lang={lang} />
+    <ProjectsShowcase client:visible lang={lang} />
+    <Experience client:visible lang={lang} />
+    <Contact client:visible />
+  </main>
+  <Footer />
 </Layout>
